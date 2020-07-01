@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ asset('css/signin.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+	<main role="main">
+		<div class="container">
+			<form method="post" class="form-signin">
+				<img class="mb-4 bg-white rounded" src="{{ asset('img/logo_aem.png') }}" alt width="72" height="72" />
+
+				{% if error %}
+					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+				{% endif %}
+				{% if app.user %}
+					<div class="mb-3">
+						{{ 'signin.already' | trans }} <b>{{ app.user.username }}</b>.
+						<br /><a href="{{ path('app_logout') }}">{{ 'Logout' | trans }}</a>
+					</div>
+				{% else %}
+					<h3 class="mb-3">{{'Sign in please' | trans }}</h3>
+					<input type="email" name="email" id="inputEmail" class="form-control mb-3" required autofocus placeholder="{{'Email' | trans }}" />
+					<input type="password" name="password" id="inputPassword" class="form-control" required placeholder="{{ 'Password' | trans }}" />
+					<hr />
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
+					<button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'Signin' | trans }}</button>
+					<br />
+					<a href="{{path('app_register')}}">{{ 'Or create an account' | trans  }}</a>
+				{% endif %}
+			</form>
+		</div>
+	</main>
+{% endblock %}

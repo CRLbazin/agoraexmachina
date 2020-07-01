@@ -1,0 +1,215 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'category/menu.html.twig' %}
+
+			<main class="col" id="content">
+				<div class="row mb-2" >
+					<div class="col-12 d-flex">
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'Workshop' | trans }} {{ workshop.name }}</h4>
+						<nav aria-label="breadcrumb  text-secondary">
+							<ol class="breadcrumb text-small">
+								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
+								<li class="breadcrumb-item"><a href="{{path('workshop_index', {'slug' : workshop.category.name | slugify, 'category' : workshop.category.id })}}">{{ workshop.category.name }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ workshop.name }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<div class="row mb-3 d-flex justify-content-center" >
+					<div class="col-10">
+						{% include 'workshop/menu.sub.html.twig' %}
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>					
+				<div class="row" >
+					<div class="col-xl-8 col-md-12 mb-3">
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="card-title">
+											<h5>{{ 'Details' | trans}} {{ 'Workshop' | trans | lower }}</h5>
+										</div>
+										<div class="card-text mb-3">{{ status(workshop.dateEnd) }}</div>
+										<div class="card-text mb-3">{{ workshop.description | raw }}</div>
+										<div class="card-text mb-3">
+											<div class="d-flex justify-content-between">
+												<div>
+													<b>{{ 'Date begin' | trans }}</b>
+													<br />
+													{{ workshop.dateBegin |date("d/m/Y") }}
+												</div>
+												<div>
+													<b>{{ 'Date end' | trans }}</b>
+													<br />
+													{{ workshop.dateEnd |date("d/m/Y") }}
+												</div>
+												<div>
+													<b>{{ 'Proposals' | trans }}</b>
+													<br />
+													{{ workshop.proposals | length }}
+												</div>
+												<div>
+													<b>{{ 'Forums' | trans }}</b>
+													<br />
+													{{ workshop.proposals | length }}
+												</div>
+											</div>
+										</div>
+										<!-- @Todo
+								<div class="card-text mb3">
+									<b>{{ 'Members' | trans }}</b>
+									<br />
+									<div class="d-flex d-flex-nowrap">
+										<div class="avatar avatar-list avatar-sm bg-light text-secondary">CB</div>
+										<div class="avatar avatar-list avatar-sm bg-light text-secondary">CB</div>
+										<div class="avatar avatar-list avatar-sm bg-light text-secondary">CB</div>
+										<div class="avatar avatar-list avatar-sm bg-light text-secondary">CB</div>
+									</div>
+								</div>
+										-->
+									</div>
+								</div>
+							</div>
+						</div>
+						{% if date(workshop.dateEnd) < date() %}
+						<hr class="mt-4 mb-4" />
+						<div class="row">
+							<div class="col-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="card-title">
+											<h5>{{ 'Results' | trans}} {{ 'Workshop' | trans | lower }}</h5>
+										</div>										
+										<div class="card-text mb-3">
+											<div class="row">
+												<div class="col-4">
+													<b>{{ 'statusQuo' | trans }}</b>
+													{% for proposal in workshop.proposals %}
+														{% set vf = 0 %}
+														{% set va = 0 %}
+														{% set vb = 0 %}
+														{% for vote in proposal.votes %}
+															{% if vote.votedFor > 0 %} {% set vf = vf + 1 %} {% endif %}
+															{% if vote.votedAgainst > 0 %} {% set va = va + 1 %} {% endif %}
+															{% if vote.votedBlank > 0 %} {% set vb = vb + 1 %} {% endif %}
+														{% endfor %}
+														{% if vb > vf and vb > va %}
+															<div class="card  bg-light mb-3" style="max-width: 18rem;">
+																<div class="card-header">{{  proposal.user.username }}</div>
+																<div class="card-body">
+																	<h5 class="card-title">{{ proposal.name | raw }}</h5>
+																	<p class="card-text">{{ proposal.description | raw }}</p>
+																</div>
+															</div>
+														{% endif %}
+													{% endfor %}
+												</div>
+												<div class="col-4">
+													<b>{{ 'accepted' | trans }}</b>
+													{% for proposal in workshop.proposals %}
+														{% set vf = 0 %}
+														{% set va = 0 %}
+														{% set vb = 0 %}
+														{% for vote in proposal.votes %}
+															{% if vote.votedFor > 0 %} {% set vf = vf + 1 %} {% endif %}
+															{% if vote.votedAgainst > 0 %} {% set va = va + 1 %} {% endif %}
+															{% if vote.votedBlank > 0 %} {% set vb = vb + 1 %} {% endif %}
+														{% endfor %}
+														{% if vf > va and vf > vb %}
+															<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+																<div class="card-header">{{  proposal.user.username }}</div>
+																<div class="card-body">
+																	<h5 class="card-title">{{ proposal.name | raw }}</h5>
+																	<p class="card-text">{{ proposal.description | raw }}</p>
+																</div>
+															</div>
+														{% endif %}
+													{% endfor %}
+												</div>
+												<div class="col-4">
+													<b>{{ 'refused' | trans }}</b>
+													{% for proposal in workshop.proposals %}
+														{% set vf = 0 %}
+														{% set va = 0 %}
+														{% set vb = 0 %}
+														{% for vote in proposal.votes %}
+															{% if vote.votedFor > 0 %} {% set vf = vf + 1 %} {% endif %}
+															{% if vote.votedAgainst > 0 %} {% set va = va + 1 %} {% endif %}
+															{% if vote.votedBlank > 0 %} {% set vb = vb + 1 %} {% endif %}
+														{% endfor %}
+														{% if va > vf and va > vb %}
+															<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+																<div class="card-header">{{  proposal.user.username }}</div>
+																<div class="card-body">
+																	<h5 class="card-title">{{ proposal.name | raw }}</h5>
+																	<p class="card-text">{{ proposal.description | raw }}</p>
+																</div>
+															</div>
+														{% endif %}
+													{% endfor %}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>												
+						<hr class="mt-4 mb-4" />
+						{% endif%}
+					</div>
+					<div class="col-xl-4 col-md-12 mb-3">
+						<div class="card">
+							<div class="card-body">
+								<div class="card-title">
+									<h5>{{ 'Timeline' | trans }}</h5>
+								</div>
+								<div class="card-text">
+									<div class="timeline">
+										<div class="timeline-header" style="text-align:center;">
+											<div class="btn btn-primary disabled rounded">
+												{{ 'Today' | trans }}
+											</div>
+										</div>
+										<div class="timeline-item d-flex flex-row">
+											<div class="timeline-left mr-auto" style="text-align:right;width:50%;padding : 10px 10px 10px 0px;border-right : 2px solid #AEAEAE;">
+												<div class="timeline-content rounded" style="background-color : #EAEAEA;padding:5px;">
+													<span class="arrow-left"></span>
+													<b>2017</b>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+												</div>
+											</div>
+										</div>
+										<div class="timeline-item d-flex flex-row">
+											<div class="timeline-right ml-auto" style="width:50%;padding : 10px 0px 10px 10px;border-left : 2px solid #AEAEAE;margin-right : 2px;">
+												<div class="timeline-content rounded" style="background-color : #EAEAEA;padding:5px;">
+													<span class="arrow-right"></span>
+													<b>2017</b>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+												</div>
+											</div>
+										</div>
+										<div class="timeline-footer" style="text-align:center;">
+											<div class="btn btn-secondary disabled rounded">
+												<b>{{ 'Start' | trans }}</b>
+												<br />
+												{{ workshop.dateBegin | date('d/m/yy') }}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+<nav class="col-2 offset-2 d-none d-md-block bg-grey sidebar sidebar-grey bg-light">
+	<br />
+	<div class=" text-left">
+		<h4 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 ">
+          <span>{{ 'List of' | trans }} {{ 'Workshops' | trans | lower}}</span>          
+        </h4>
+		<ul class="nav flex-column">
+			{% set urlWorkshop =  app.request.get('workshop') %}
+			{% for ws in workshops %}
+				<li class="nav-item">
+					
+					<a href="{{path('workshop_show', {'workshop' : ws.id, 'slug' : app.request.get('slug') })}}" class="nav-link {{ ws.id == urlWorkshop.id ? 'active'}}" >
+						{% if ws.image %}
+							<img class="bd-placeholder-img img-thumbnail" src="{{ vich_uploader_asset(ws, 'imageFile') | imagine_filter('categories_list')}}" />
+						{% else %}
+							<img class="bd-placeholder-img img-thumbnail" src="{{ asset('img/logo_aem-sm.png')}}" />
+						{% endif %}
+						{{ ws.name }}
+					</a>
+				</li>
+			{% endfor%}
+		</ul>
+	</div>
+</nav>

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ asset('css/signin.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+	<main role="main">
+		<div class="container">
+			<img class="mb-4  rounded" src="{{ asset('img/logo_aem.png') }}" alt width="72" height="72" />
+			{% if app.user %}
+				<div class="mb-3">
+					{{ 'signin.already' | trans }} <b>{{ app.user.username }}</b>.
+					<br /><a href="{{ path('app_logout') }}">{{ 'Logout' | trans }}</a>
+				</div>
+			{% else %}
+				{% form_theme registrationForm 'bootstrap_4_layout.html.twig' %}
+				{{ form_start(registrationForm, {'attr' : { 'class' : 'form-signin'}}) }}
+				<h3 class="mb-3">{{'Register' | trans }}</h3>
+				{{ form_row(registrationForm.username) }}
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.plainPassword) }}
+				<hr />
+				<button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'Register' | trans }}</button>
+				<br />
+				<a href="{{path('app_login')}}">{{ 'Or sign in' | trans }}</a>
+				{{ form_end(registrationForm) }}
+			{% endif %}
+		</div>
+	</main>
+{% endblock %}

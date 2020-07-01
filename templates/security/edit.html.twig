@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'admin.menu.html.twig' %}
+			<main class="col-11 col-lg-10 ml-sm-auto">
+				<div class="row mb-2" >
+					<div class="col-12">
+						<h4>{{'User' | trans }} : {{ userForm.vars.value.username }}</h4>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						<a href="{{ path('user_admin') }}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left"></i> {{ 'List of' | trans }} {{ 'Users' | trans | lower }}</a>
+						<a href="{{ path('user_delete', {'id' : userForm.vars.value.id}) }}" class="btn btn-danger btn-sm" data-toggle="deleteConfirmation"><i class="fas fa-trash-alt"></i> {{ 'Delete' | trans }}</a>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col-2">
+						<div class="card">
+							<div class="card-body d-flex justify-content-center">
+								<h1 class="avatar bg-primary d-none d-lg-block">{{ userForm.vars.value.username | first | capitalize }}</h1>
+							</div>
+						</div>
+					</div>
+					<div class="col-10">
+						<div class="card">
+							<div class="card-body">
+								{% form_theme userForm 'bootstrap_4_layout.html.twig' %}
+								{{ form(userForm) }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

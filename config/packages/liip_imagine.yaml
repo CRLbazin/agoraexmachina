@@ -1,0 +1,31 @@
+# See dos how to configure the bundle: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+    resolvers:
+        default:
+            web_path:
+                web_root: "%kernel.project_dir%/public"
+                cache_prefix: "img/cache"
+    loaders:
+        default:
+            filesystem:
+                data_root: "%kernel.project_dir%/"
+
+        
+    filter_sets :
+        cache : ~
+        categories_home :
+            quality : 100
+            filters :
+                thumbnail  : { size : [260, 225], mode : outbound }
+        categories_list:
+            quality : 100
+            filters :
+                thumbnail  : { size : [25, 25], mode : outbound }
+        workshops_home :
+            quality : 100
+            filters :
+                thumbnail  : { size : [80, 80], mode : outbound }
+        workshops_list :
+            quality : 100
+            filters :
+                thumbnail  : { size : [25, 25], mode : outbound }

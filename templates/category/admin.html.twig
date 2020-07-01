@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'admin.menu.html.twig' %}
+			<main class="col-11 col-lg-10 ml-sm-auto">
+				<div class="row mb-2" >
+					<div class="col-12">
+						<h4>{{'Admin' | trans }} : {{ 'Categories' | trans }}</h4>
+
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						<a href="{{ path('category_add') }}" class="btn btn-primary"><i class="fas fa-plus"></i> {{ 'Add' | trans }}</a>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-centered">
+										<thead class="thead-light">
+											<tr>
+												<th width="5%">&nbsp;</th>
+												<th width="85%">{{ 'Name' | trans }}</th>												
+												<th width="10%">{{ 'Actions' | trans }}</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for category in categories %}
+												<tr>
+													<td>
+														{% if category.image %}
+															<img src="{{ vich_uploader_asset(category, 'imageFile') | imagine_filter('categories_list')}}" />
+														{% else %}
+															<img src="{{ asset('img/logo_aem-sm.png')}}" />
+														{% endif %}
+													</td>
+													<td>{{ category.name}}</td>												
+													<td>
+														<a href="{{ path('category_edit', {'category' : category.id}) }}" class="text-primary"><i class="fas fa-edit"></i></a> 
+														<a href="{{ path('category_delete', {'category' : category.id}) }}" class="text-primary"  data-toggle="deleteConfirmation"><i class="fas fa-trash-alt"></i></a> 
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

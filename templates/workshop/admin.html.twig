@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'admin.menu.html.twig' %}
+			<main class="col-11 col-lg-10 ml-sm-auto">
+				<div class="row mb-2" >
+					<div class="col-12">
+						<h4>{{'Admin' | trans }} : {{ 'Workshops' | trans }}</h4>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						<a href="{{ path('workshop_add') }}" class="btn btn-primary"><i class="fas fa-plus"></i> {{ 'Add' | trans }}</a>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-centered">
+										<thead class="thead-light">
+											<tr>
+												<th width="5%">&nbsp;</th>
+												<th width="20%">{{ 'Category' | trans }}</th>	
+												<th width="65%">{{ 'Name' | trans }}</th>
+												<th width="10%">{{ 'Actions' | trans }}</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for workshop in workshops | sort %}
+												<tr>
+													<td>
+														{% if workshop.image %}
+															<img src="{{ vich_uploader_asset(workshop, 'imageFile') | imagine_filter('workshops_list')}}" />
+														{% else %}
+															<img src="{{ asset('img/logo_aem-sm.png')}}" />
+														{% endif %}
+													</td>
+													<td>{{ workshop.category.name}}</td>												
+													<td>{{ workshop.name}}</td>												
+													<td>
+														<a href="{{ path('workshop_edit', {'workshop' : workshop.id}) }}" class="text-primary"><i class="fas fa-edit"></i></a> 
+														<a href="{{ path('workshop_delete', {'workshop' : workshop.id}) }}" class="text-primary"  data-toggle="deleteConfirmation"><i class="fas fa-trash-alt"></i></a> 
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

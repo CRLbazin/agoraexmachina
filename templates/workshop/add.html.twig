@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'admin.menu.html.twig' %}
+			<main class="col-11 col-lg-10 ml-sm-auto">
+				<div class="row mb-2" >
+					<div class="col-12">
+						<h4>{{ 'Add' | trans }} {{'Workshop' | trans | lower}}</h4>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						<a href="{{ path('workshop_admin') }}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left"></i> {{ 'List of' | trans }} {{ 'Categories' | trans | lower }}</a>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								{% form_theme form 'bootstrap_4_layout.html.twig' %}
+								{{ form(form) }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

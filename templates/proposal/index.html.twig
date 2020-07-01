@@ -1,0 +1,203 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% set slug = app.request.get('slug') %}
+
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'category/menu.html.twig' %}
+
+			<main class="col" id="content">
+				<div class="row mb-2" >
+					<div class="col-12 d-flex">
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'Workshop' | trans }} {{ workshop.name }}</h4>
+						<nav aria-label="breadcrumb  text-secondary">
+							<ol class="breadcrumb text-small">
+								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
+								<li class="breadcrumb-item"><a href="{{path('workshop_index', {'slug' : workshop.category.name | slugify, 'category' : workshop.category.id })}}">{{ workshop.category.name }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ workshop.name }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<div class="row mb-3 d-flex justify-content-center" >
+					<div class="col-10">
+						{% include 'workshop/menu.sub.html.twig' %}
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+
+				<div class="row" >
+					<div class="col-3">
+						<div class="card">
+							<div class="card-body d-flex flex-column" style="padding:1rem;">
+								{% if app.user and date(workshop.dateEnd) > date() %}
+									<a href="{{ path('proposal_add', {'workshop' : workshop.id, 'slug' : slug }) }}" class="btn btn-primary "><i class="fas fa-plus"></i> {{ 'Add a proposal' | trans }}</a>
+									<br />
+								{% endif %}
+								<ul class="nav flex-column">
+									<span class="text-muted">{{ 'List of' | trans }} {{ 'Proposals' | trans | lower }}</span>
+									{% for p in proposals %}
+										<li class="nav-item nav-proposal">
+											<a class="nav-link {{ (proposal.id == p.id) ? 'active' }}" href="{{path('proposal_index', {'proposal' : p.id, 'workshop' : workshop.id, 'slug' : slug})}}">
+												<i class="fas fa-comment"></i>&nbsp;
+												{{ p.name | truncate(30, true)}}
+											</a>
+										</li>
+									{% endfor %}
+								</ul>	
+							</div>
+						</div>
+					</div>
+					{% if proposal is not null %}
+						<div class="col-9">
+							<div class="row mb-3">
+								<div class="col-12">
+									<div class="card">
+										<div class="card-body">
+											<div class="btn-group mb-3" role="group">
+												{% set vf = 0 %}
+												{% set va = 0 %}
+												{% set vb = 0 %}
+												{% for vote in proposal.votes %}
+													{% if vote.votedFor > 0 %} {% set vf = vf + 1 %} {% endif %}
+													{% if vote.votedAgainst > 0 %} {% set va = va + 1 %} {% endif %}
+													{% if vote.votedBlank > 0 %} {% set vb = vb + 1 %} {% endif %}
+												{% endfor %}
+												{% if app.user and date(workshop.dateEnd) > date() %}
+													<div class="dropdown">
+														<button class="btn btn-success progress-bar-striped dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															{{ vf }}
+														</button>
+														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+															<a href="{{path('vote_add', {'slug' : slug, 'proposal' : proposal.id, 'userVote' : 'votedFor', 'user' : app.user.id })}}" class="dropdown-item">{{ 'vote.me' | trans }}</a>
+															{% for delegation in app.user.delegationsTo %}
+																{% if (delegation.workshop and delegation.workshop.id == workshop.id) or (delegation.category and delegation.category.id == workshop.category.id) %}
+																	<a href="{{path('vote_add', {'slug' : slug, 'proposal' : proposal.id, 'userVote' : 'votedFor', 'user' : delegation.userFrom.id })}}" class="dropdown-item" >{{ 'vote.as' | trans }} {{ delegation.userFrom.username }}</a>
+																{% endif %}
+															{% endfor %}
+														</div>
+													</div>
+													<div class="dropdown">
+														<button class="btn btn-danger progress-bar-striped dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															{{ va }}
+														</button>
+														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+															<a href="{{path('vote_add', {'slug' : slug, 'proposal' : proposal.id, 'userVote' : 'votedAgainst', 'user' : app.user.id })}}" class="dropdown-item">{{ 'vote.me' | trans }}</a>
+															{% for delegation in app.user.delegationsTo %}
+																{% if (delegation.workshop and delegation.workshop.id == workshop.id) or (delegation.category and delegation.category.id == workshop.category.id) %}
+																	<a href="{{path('vote_add', {'slug' : slug, 'proposal' : proposal.id, 'userVote' : 'votedAgainst', 'user' : delegation.userFrom.id })}}" class="dropdown-item" >{{ 'vote.as' | trans }} {{ delegation.userFrom.username }}</a>
+																{% endif %}
+															{% endfor %}
+														</div>
+													</div>
+													<div class="dropdown">
+														<button class="btn btn-secondary progress-bar-striped  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															{{ vb }}
+														</button>
+														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+															<a href="{{path('vote_add', {'slug' : slug, 'proposal' : proposal.id, 'userVote' : 'votedBlank', 'user' : app.user.id })}}" class="dropdown-item">{{ 'vote.me' | trans }}</a>
+															{% for delegation in app.user.delegationsTo %}
+																{% if (delegation.workshop and delegation.workshop.id == workshop.id) or (delegation.category and delegation.category.id == workshop.category.id) %}
+																	<a href="{{path('vote_add', {'slug' : slug, 'proposal' : proposal.id, 'userVote' : 'votedBlank', 'user' : delegation.userFrom.id })}}" class="dropdown-item" >{{ 'vote.as' | trans }} {{ delegation.userFrom.username }}</a>
+																{% endif %}
+															{% endfor %}
+														</div>
+													</div>
+												{% else %}
+													<div class="btn btn-success progress-bar-striped ">{{ vf }}</div>
+													<div class="btn btn-danger progress-bar-striped">{{ va }}</div>
+													<div class="btn btn-secondary progress-bar-striped">{{ vb }}</div>
+												{% endif %}
+											</div>
+											{% if app.user and app.user == proposal.user and date(workshop.dateEnd) > date() %}
+												<div class="btn-group mb-3 ml-3" role="group">
+													<a href="{{ path('proposal_edit', {'workshop' : workshop.id, 'proposal' : proposal.id, 'slug' : slug}) }}" class="btn btn-light "><i class="fas fa-edit" aria-hidden="true"></i></a>
+													<a href="{{ path('proposal_delete', {'workshop' : workshop.id, 'proposal' : proposal.id, 'slug' : slug})}}" class="btn btn-light" data-toggle="deleteConfirmation"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+												</div>
+											{% endif %}
+											<h5>{{ proposal.name}}</h5>
+											<span class="text-muted"><div class="avatar avatar-xs float-left bg-primary">{{ proposal.user.username | first | capitalize }}</div>&nbsp;{{ 'From' | trans }} {{ proposal.user.username }}</span>
+											<hr />
+											{{ proposal.description | raw }}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div class="card">
+										<div class="card-body">
+											<h5>{{ 'Forums' | trans }}</h5>
+											{% if app.user and date(workshop.dateEnd) > date() %}
+												<a href="{{ path('forum_add', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug }) }}" class="btn btn-primary m-1"><i class="fas fa-plus"></i> {{ 'Add' | trans }}</a>
+											{% endif %}
+											{% for forum in proposal.forums %}
+												{% if forum.parentForum == "" %}
+													<div class="col-12 mb-3 d-flex flex-row float-left">
+														<div class="mr-4 mt-3">
+															<h5 class="avatar avatar-sm bg-secondary d-none d-lg-block">{{ forum.user.username | first | capitalize }}</h5>
+														</div>
+														<div style="width:75%;text-align:left;padding : 10px 10px 10px 0px;">
+															<div style="background-color : #EAEAEA;padding:	5px;">
+																<span class="arrow-right"></span>
+																<div class="content" style="padding : 10px">
+																	{% if app.user and date(workshop.dateEnd) > date() %}
+																		<div class="btn-group m-1 float-right" role="group">
+																			<a href="{{ path('forum_answer', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : forum.id}) }}" class="btn btn-light "><i class="fas fa-reply"></i> {{ 'Reply' | trans }}</a>
+																			<a href="{{ path('forum_edit', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : forum.id}) }}" class="btn btn-light ml-1"><i class="fas fa-edit"></i></a>
+																			<a href="{{ path('forum_delete', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : forum.id}) }}" class="btn btn-light ml-1" data-toggle="deleteConfirmation"><i class="fas fa-trash"></i></a>
+																		</div>
+																	{% endif %}
+																	<h5 class="card-title">{{forum.name}}</h5>
+																	<span class="text-muted">{{ 'From' | trans }} {{ forum.user.username }}</span>
+																	<hr />
+																	<p class="card-text">{{forum.description | raw}}</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													{% for f in proposal.forums %}
+														{% if f.parentForum != "" and f.parentForum.id == forum.id %}
+															<div class="col-10 mb-3 d-flex flex-row float-right">
+																<div style="width:75%;text-align:left;padding : 10px 10px 10px 0px;">
+																	<div style="background-color : #EAEAEA;padding:	5px;">
+																		<span class="arrow-left"></span>
+																		<div class="content" style="padding : 10px">
+																			{% if app.user and date(workshop.dateEnd) > date() %}
+																				<div class="btn-group m-1 float-right" role="group">
+																					<a href="{{ path('forum_edit', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : f.id}) }}" class="btn btn-light ml-1"><i class="fas fa-edit"></i></a>
+																					<a href="{{ path('forum_delete', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : f.id}) }}" class="btn btn-light ml-1" data-toggle="deleteConfirmation"><i class="fas fa-trash"></i></a>
+																				</div>
+																			{% endif %}
+																			<h5 class="card-title">{{f.name}}</h5>
+																			<span class="text-muted">{{ 'From' | trans }} {{ f.user.username }}</span>
+																			<hr />
+																			<p class="card-text">{{f.description | raw}}</p>
+																		</div>
+																	</div>
+																</div>
+																<div class="mr-4 mt-3">
+																	<h5 class="avatar avatar-sm bg-secondary d-none d-lg-block">{{ f.user.username | first | capitalize }}</h5>
+																</div>
+															</div>
+														{% endif %}
+													{% endfor %}
+												{% endif %}
+
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endif %}	
+				</div>	
+			</main>
+		</div>
+	</div>
+{% endblock %}

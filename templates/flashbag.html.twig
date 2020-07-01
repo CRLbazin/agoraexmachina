@@ -1,0 +1,32 @@
+{% for message in app.flashes('success') %}
+	<div class="alert alert-success mt-1">
+		{{ message | trans }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{% endfor %}
+{% for message in app.flashes('error') %}
+	<div class="alert alert-danger mt-1">
+		{{ message | trans }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{% endfor %}
+{% for message in app.flashes('warning') %}
+	<div class="alert alert-warning mt-1">
+		{{ message | trans }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{% endfor %}
+{% for message in app.flashes('info') %}
+	<div class="alert alert-info mt-1">
+		{{ message | trans }}
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+{% endfor %}

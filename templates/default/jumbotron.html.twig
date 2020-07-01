@@ -1,0 +1,18 @@
+<div class="card">
+	<h2 class="card-header bg-secondary text-white">{{params.website.title}}</h2>
+	<div class="card-body">
+		<p class="card-text">
+			{{'jumbotron.1' | trans }} .
+			<br /><br />
+			{{'jumbotron.2' | trans }}.
+			<br /><br />
+			{{'jumbotron.3' | trans }}.
+			<br /><br />
+			{{'jumbotron.4' | trans | raw }}.
+		</p>
+		<p class="card-text">
+			{{ 'jumbotron.5' | trans }}.
+		</p>
+		<a class="btn btn-primary" href="{{path('admin')}}" role="button"><i class="fas fa-user-cog"></i> {{'Admin' | trans }}</a>
+	</div>
+</div>

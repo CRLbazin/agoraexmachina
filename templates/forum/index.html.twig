@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'category/menu.html.twig' %}
+
+			<main class="col" id="content">
+				<div class="row mb-2" >
+					<div class="col-12 d-flex">
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'Workshop' | trans }} {{ workshop.name }}</h4>
+						<nav aria-label="breadcrumb  text-secondary">
+							<ol class="breadcrumb text-small">
+								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
+								<li class="breadcrumb-item"><a href="{{path('workshop_index', {'slug' : workshop.category.name | slugify, 'category' : workshop.category.id })}}">{{ workshop.category.name }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ workshop.name }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<div class="row mb-3 d-flex justify-content-center" >
+					<div class="col-10">
+						{% include 'workshop/menu.sub.html.twig' %}
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+				{% if app.user %}
+					<div class="row mb-3" >
+						<div class="col-12">
+							<div class="d-flex">
+								<div class="mr-auto">
+									<div class="btn-group" role="group">
+										<a href="{{ path('forum_add', {'workshop' : workshop.id, 'slug' : workshop.category.name | slugify ~ '_' ~ workshop.name | slugify}) }}" class="btn btn-primary "><i class="fas fa-plus"></i> {{ 'Add' | trans }}</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+				<div class="row" >
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">			
+								{% for forum in forums %}
+									<div class="col-12 mb-3 d-flex flex-row ">
+										<div class="mr-4 mt-3">
+											<h5 class="avatar avatar-sm bg-secondary d-none d-lg-block">{{ forum.user.username | first | capitalize }}</h5>
+										</div>
+										<div style="width:75%;text-align:left;padding : 10px 10px 10px 0px;">
+											<div style="background-color : #EAEAEA;padding:	5px;">
+												<span class="arrow-right"></span>
+												<div class="content" style="padding : 10px">
+													<h5 class="card-title">{{forum.name}}</h5>
+													<p class="card-text">{{forum.description | raw}}</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>	
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

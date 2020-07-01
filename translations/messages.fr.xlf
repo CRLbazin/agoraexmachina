@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="file.ext">
+		<body>
+			<!-- ******************************** -->
+			<!-- CORE -->
+			<!-- ******************************** -->
+			<trans-unit id="home">
+				<source>home</source>
+				<target>Accueil</target>
+			</trans-unit>
+			<trans-unit id="error403">
+				<source>error403</source>
+				<target>Vous n'avez pas le droit d'accéder à cette page</target>
+			</trans-unit>
+			<trans-unit id="error404">
+				<source>error404</source>
+				<target>La page demandée n''existe pas</target>
+			</trans-unit>
+			<trans-unit id="error">
+				<source>error</source>
+				<target>Une erreur technique est survenue dans le traitement de votre demande. Veuillez informer l'administrateur du site</target>
+			</trans-unit>	 
+			<trans-unit id="dashboard">
+				<source>dashboard</source>
+				<target>Tableau de bord</target>
+			</trans-unit>
+			<trans-unit id="list_of">
+				<source>list_of</source>
+				<target>Liste des</target>
+			</trans-unit>
+			<trans-unit id="delete">
+				<source>delete</source>
+				<target>Supprimer</target>
+			</trans-unit>
+			<trans-unit id="add">
+				<source>add</source>
+				<target>Ajouter</target>
+			</trans-unit>
+			<trans-unit id="edit">
+				<source>edit</source>
+				<target>Modifier</target>
+			</trans-unit>	
+			<trans-unit id="submit">
+				<source>submit</source>
+				<target>Enregistrer</target>
+			</trans-unit>	     
+			<trans-unit id="name">
+				<source>name</source>
+				<target>Nom</target>
+			</trans-unit>      
+			<trans-unit id="image_file">
+				<source>image_file</source>
+				<target>Image</target>
+			</trans-unit>    
+			<trans-unit id="description">
+				<source>description</source>
+				<target>Description</target>
+			</trans-unit>  
+			<trans-unit id="date_begin">
+				<source>date_begin</source>
+				<target>Date de début</target>
+			</trans-unit> 
+			<trans-unit id="date_end">
+				<source>date_end</source>
+				<target>Date de fin</target>
+			</trans-unit> 
+			<trans-unit id="year">
+				<source>year</source>
+				<target>Année</target>
+			</trans-unit> 
+			<trans-unit id="month">
+				<source>month</source>
+				<target>mois</target>
+			</trans-unit> 
+			<trans-unit id="day">
+				<source>day</source>
+				<target>Jour</target>
+			</trans-unit> 
+			<trans-unit id="delete.success">
+				<source>delete.success</source>
+				<target>Suppression effectuée</target>
+			</trans-unit>
+			<trans-unit id="add.success">
+				<source>add.success</source>
+				<target>Création enregistrée</target>
+			</trans-unit>
+			<trans-unit id="actions">
+				<source>actions</source>
+				<target>Actions</target>
+			</trans-unit>
+			<trans-unit id="start">
+				<source>start</source>
+				<target>Début</target>
+			</trans-unit>
+			<trans-unit id="end">
+				<source>end</source>
+				<target>Fin</target>
+			</trans-unit>
+			<trans-unit id="search">
+				<source>search</source>
+				<target>Recherche</target>
+			</trans-unit>
+			<trans-unit id="created_by">
+				<source>created_by</source>
+				<target>Créé par</target>
+			</trans-unit>
+			<trans-unit id="details">
+				<source>details</source>
+				<target>Détails</target>
+			</trans-unit>
+			<trans-unit id="members">
+				<source>members</source>
+				<target>Membres</target>
+			</trans-unit>
+			<trans-unit id="timeline">
+				<source>timeline</source>
+				<target>Chronologie</target>
+			</trans-unit>
+			<trans-unit id="today">
+				<source>today</source>
+				<target>Aujourd'hui</target>
+			</trans-unit>
+			<trans-unit id="from">
+				<source>from</source>
+				<target>De</target>
+			</trans-unit>			
+			<trans-unit id="back">
+				<source>back</source>
+				<target>Retour</target>
+			</trans-unit>
+			
+			
+			<trans-unit id="edit.success">
+				<source>edit.success</source>
+				<target>Modification enregistrée</target>
+			</trans-unit>
+			<trans-unit id="jumbotron.1">
+				<source>jumbotron.1</source>
+				<target>AGORA Ex Machina facilite la prise de décisions via la "démocratie liquide"</target>
+			</trans-unit>
+			<trans-unit id="jumbotron.2">
+				<source>jumbotron.2</source>
+				<target>L'outil met à disposition un écosystème simple et intuitif pour gérer le cycle de vie de vos décisions, de l'idée de départ jusqu'à sa validation, en passant par les étapes de discussions, d'itérations et de votes</target>
+			</trans-unit>
+			<trans-unit id="jumbotron.3">
+				<source>jumbotron.3</source>
+				<target>Le terme "Liquide" signifie qu'il est possible de déléguer ses votes de manière fluide et rapide</target>
+			</trans-unit>
+			<trans-unit id="jumbotron.4">
+				<source>jumbotron.4</source>
+				<target>Pour commencer, vous devez vous connecter en tant qu'administrateur (nom d'utilisateur par défaut "admin" et mot de passe par défaut "password") et créer vos premières catégories. Les catégories regrouperont vos ateliers de discussions et de votes</target>
+			</trans-unit>
+			<trans-unit id="jumbotron.5">
+				<source>jumbotron.5</source>
+				<target>En cas de problème, nous sommes sur https://github.com/CRLbazin/agoraexmachina</target>
+			</trans-unit>
+          
+		  
+			<!-- ******************************** -->
+			<!-- USERS -->
+			<!-- ******************************** -->
+			<trans-unit id="user">
+				<source>user</source>
+				<target>Utilisateur</target>
+			</trans-unit>
+			<trans-unit id="users">
+				<source>users</source>
+				<target>Utilisateurs</target>
+			</trans-unit>
+			<trans-unit id="signin">
+				<source>signin</source>
+				<target>Se connecter</target>
+			</trans-unit>
+			<trans-unit id="signin.please">
+				<source>signin.please</source>
+				<target>Veuillez vous connecter</target>
+			</trans-unit>
+			<trans-unit id="signin.already">
+				<source>signin.already</source>
+				<target>Vous êtes déjà connecté</target>
+			</trans-unit>			
+			<trans-unit id="username">
+				<source>username</source>
+				<target>Nom d'utilisateur</target>
+			</trans-unit>
+			<trans-unit id="role">
+				<source>role</source>
+				<target>Role</target>
+			</trans-unit>   
+			<trans-unit id="roles">
+				<source>roles</source>
+				<target>Roles</target>
+			</trans-unit>    
+			<trans-unit id="email">
+				<source>email</source>
+				<target>Email</target>
+			</trans-unit>
+			<trans-unit id="password">
+				<source>password</source>
+				<target>Mot de passe</target>
+			</trans-unit>
+			<trans-unit id="or_create_account">
+				<source>or_create_account</source>
+				<target>Ou créer un compte</target>
+			</trans-unit>
+			<trans-unit id="or_sign_in">
+				<source>or_sign_in</source>
+				<target>Ou se connecter</target>
+			</trans-unit>
+			<trans-unit id="register">
+				<source>register</source>
+				<target>S'enregistrer</target>
+			</trans-unit>
+			<trans-unit id="logout">
+				<source>logout</source>
+				<target>Se déconnecter</target>
+			</trans-unit>
+			<trans-unit id="admin">
+				<source>admin</source>
+				<target>Administration</target>
+			</trans-unit>
+			
+			
+			
+			<!-- ******************************** -->
+			<!-- CATEGORY -->
+			<!-- ******************************** -->
+			<trans-unit id="categories">
+				<source>categories</source>
+				<target>Catégories</target>
+			</trans-unit>
+			<trans-unit id="category">
+				<source>category</source>
+				<target>Catégorie</target>
+			</trans-unit>
+			
+			
+			<!-- ******************************** -->
+			<!-- WORKSHOP -->
+			<!-- ******************************** -->
+			<trans-unit id="workshops">
+				<source>workshops</source>
+				<target>Ateliers</target>
+			</trans-unit>	
+			<trans-unit id="workshop">
+				<source>workshop</source>
+				<target>Atelier</target>
+			</trans-unit>	
+            
+			<trans-unit id="rights.workshops.see">
+				<source>rights.workshops.see</source>
+				<target>Qui peut voir l'atelier</target>
+			</trans-unit>
+			<trans-unit id="rights.proposals.vote">
+				<source>rights.proposals.vote</source>
+				<target>Qui peut voter</target>
+			</trans-unit>
+			<trans-unit id="rights.proposals.write">
+				<source>rights.proposals.write</source>
+				<target>Qui peut rédiger des propositions</target>
+			</trans-unit>
+			<trans-unit id="quorum.required">
+				<source>quorum.required</source>
+				<target>Quorum requis</target>
+			</trans-unit>
+			<trans-unit id="rights.delegations">
+				<source>rights.delegations</source>
+				<target>Delegations autorisée</target>
+			</trans-unit>
+			<trans-unit id="everyone">
+				<source>everyone</source>
+				<target>Tout le monde</target>
+			</trans-unit>
+			<trans-unit id="results">
+				<source>results</source>
+				<target>Résultats</target>
+			</trans-unit>
+			
+			
+			<!-- ******************************** -->
+			<!-- PROPOSAL -->
+			<!-- ******************************** -->
+			<trans-unit id="proposals">
+				<source>proposals</source>
+				<target>Propositions</target>
+			</trans-unit>
+			<trans-unit id="proposal">
+				<source>proposal</source>
+				<target>Proposition</target>
+			</trans-unit>		
+			<trans-unit id="addaproposal">
+				<source>addaproposal</source>
+				<target>Ajouter une proposition</target>
+			</trans-unit>		
+			<trans-unit id="statusQuo">
+				<source>statusQuo</source>
+				<target>Statu-quo</target>
+			</trans-unit>		
+			<trans-unit id="accepted">
+				<source>accepted</source>
+				<target>Acceptée</target>
+			</trans-unit>		
+			<trans-unit id="refused">
+				<source>refused</source>
+				<target>Refusée</target>
+			</trans-unit>		
+			
+			
+			<!-- ******************************** -->
+			<!-- FORUM -->
+			<!-- ******************************** -->
+			<trans-unit id="forums">
+				<source>forums</source>
+				<target>Forums</target>
+			</trans-unit>
+			<trans-unit id="forum">
+				<source>forum</source>
+				<target>Forum</target>
+			</trans-unit>
+			
+			
+			<!-- ******************************** -->
+			<!-- DELEGATION -->
+			<!-- ******************************** -->
+			<trans-unit id="delegations">
+				<source>delegations</source>
+				<target>Délégations</target>
+			</trans-unit>
+			<trans-unit id="delegation">
+				<source>delegation</source>
+				<target>Délégation</target>
+			</trans-unit>
+			<trans-unit id="delegationsgiven">
+				<source>Delegations given</source>
+				<target>Délégations données</target>
+			</trans-unit>
+			<trans-unit id="delegationreceived">
+				<source>Delegations received</source>
+				<target>Délégations recues</target>
+			</trans-unit>
+			<trans-unit id="userFrom">
+				<source>userFrom</source>
+				<target>De l'utilisateur</target>
+			</trans-unit>
+			<trans-unit id="userTo">
+				<source>userTo</source>
+				<target>Vers l'utilisateur</target>
+			</trans-unit>
+			<trans-unit id="delegation.given">
+				<source>delegation.given</source>
+				<target>Délégations données</target>
+			</trans-unit>
+			<trans-unit id="delegation.received">
+				<source>delegation.received</source>
+				<target>Délégations reçues</target>
+			</trans-unit>
+			
+			
+						
+									
+												
+																		
+			<!-- ******************************** -->
+			<!-- VOTES -->
+			<!-- ******************************** -->
+			<trans-unit id="vote.success">
+				<source>vote.success</source>
+				<target>Vote pris en compte</target>
+			</trans-unit>	
+			<trans-unit id="vote.me">
+				<source>vote.me</source>
+				<target>Voter en mon nom</target>
+			</trans-unit>	
+			<trans-unit id="vote.as">
+				<source>vote.as</source>
+				<target>Voter en tant que</target>
+			</trans-unit>	
+			
+			
+			<!-- ******************************** -->
+			<!-- FORUMS -->
+			<!-- ******************************** -->
+			<trans-unit id="reply">
+				<source>reply</source>
+				<target>Répondre</target>
+			</trans-unit>	
+		</body>
+	</file>
+</xliff>

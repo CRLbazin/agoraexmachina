@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'admin.menu.html.twig' %}
+			<main class="col-11 col-lg-10 ml-sm-auto">
+				<h4>{{'Dashboard' | trans }}</h4>
+				<div class="row">
+					<div class="col-md-12 col-lg-4">
+						<a href="{{ path('user_admin') }}" class="card-link">
+						<div class="card mb-3 shadow-sm">
+							<div class="row no-gutters">
+								<div class="col-4 d-flex align-items-center justify-content-center">
+									<div class="btn btn-primary disabled rounded-circle text-white">
+										<h1><i class="fas fa-folder"></i></h1>
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body">
+										<h5 class="card-title">Nb. {{ 'Category' | trans }}</h5>
+										<p class="card-text">{{ categories | length }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="col-md-12 col-lg-4">
+						<a href="{{ path('category_admin') }}" class="card-link">
+						<div class="card mb-3 shadow-sm">
+							<div class="row no-gutters">
+								<div class="col-4 d-flex align-items-center justify-content-center">
+									<div class="btn btn-warning disabled rounded-circle text-white">
+										<h1><i class="fas fa-comment"></i></h1>
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body">
+										<h5 class="card-title">Nb. {{ 'Workshops' | trans }}</h5>
+										<p class="card-text">{{ workshops | length }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+					<div class="col-md-12 col-lg-4">
+						<a href="{{ path('workshop_admin') }}" class="card-link">
+						<div class="card mb-3 shadow-sm">
+							<div class="row no-gutters">
+								<div class="col-4 d-flex align-items-center justify-content-center">
+									<div class="btn btn-success disabled rounded-circle">
+										<h1><i class="fas fa-users"></i></h1>
+									</div>
+								</div>
+								<div class="col-8">
+									<div class="card-body">
+										<h5 class="card-title">Nb. {{ 'Users' | trans }}</h5>
+										<p class="card-text">{{ users | length }}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

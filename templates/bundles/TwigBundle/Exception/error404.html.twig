@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ asset('css/signin.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+<form method="post" class="form-signin">
+    <img class="mb-4 bg-white rounded" src="{{ asset('img/logo_aem.png') }}" alt width="72" height="72" />    
+    
+    <div class="mb-3">
+	{{ 'The requested page does not exist' | trans }}.
+	<br /><a href="{{ path('homepage') }}">{{ 'Home' | trans }}</a>
+    </div>
+</form>
+{% endblock %}

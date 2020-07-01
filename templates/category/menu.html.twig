@@ -1,0 +1,15 @@
+<nav class="col sidebar sidebar-grey bg-light col-1" style="width:50px">
+	<ul class="nav text-nowrap">
+		{% for category in categories %}
+			<li class="nav-item" data-toggle="tooltip" data-placement="right" title="{{category.name}}">
+				<a class="nav-link d-flex flex-row {{ category.name | slugify in app.request.get('slug') ? 'active'}}" href="{{path('workshop_index', {'category' : category.id, 'slug' : category.name | slugify})}}">
+					{% if category.image %}
+						<img class="bd-placeholder-img img-thumbnail bg-transparent" src="{{ vich_uploader_asset(category, 'imageFile') | imagine_filter('categories_list')}}" />
+					{% else %}
+						<img class="bd-placeholder-img img-thumbnail bg-transparent" src="{{ asset('img/logo_aem-sm.png')}}" />
+					{% endif %}	
+				</a>
+			</li> 
+		{% endfor %}
+	</ul>
+</nav>

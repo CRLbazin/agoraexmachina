@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'admin.menu.html.twig' %}
+			<main class="col-11 col-lg-10 ml-sm-auto">
+				<div class="row mb-2" >
+					<div class="col-12">
+						<h4>{{'Admin' | trans }} : {{ 'Users' | trans }}</h4>
+
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						<a href="{{ path('app_register') }}" class="btn btn-primary"><i class="fas fa-plus"></i> {{ 'Add' | trans }}</a>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-centered">
+										<thead class="thead-light">
+											<tr>
+												<th width="5%">&nbsp;</th>
+												<th width="20%">{{ 'Username' | trans }}</th>
+												<th width="65%">{{ 'Email' | trans }}</th>
+												<th width="10%">{{ 'Actions' | trans }}</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for user in users %}
+												<tr>
+													<td ><div class="avatar avatar-sm bg-primary">{{ user.username | first | capitalize }}</div></td>
+													<td>{{ user.username }}</td>
+													<td>{{ user.email }}</td>
+													<td>
+														<a href="{{ path('user_admin_edit', {'id' : user.id}) }}" class="text-primary"><i class="fas fa-edit"></i></a> 
+														<a href="{{ path('user_delete', {'id' : user.id}) }}" class="text-primary"  data-toggle="deleteConfirmation"><i class="fas fa-trash-alt"></i></a> 
+												</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

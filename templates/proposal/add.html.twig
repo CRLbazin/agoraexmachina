@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'category/menu.html.twig' %}
+
+			<main class="col" id="content">
+				<div class="row mb-2" >
+					<div class="col-12 d-flex">
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'Workshop' | trans }} {{ workshop.name }}</h4>
+						<nav aria-label="breadcrumb  text-secondary">
+							<ol class="breadcrumb text-small">
+								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
+								<li class="breadcrumb-item"><a href="{{path('workshop_index', {'slug' : workshop.category.name | slugify, 'category' : workshop.category.id })}}">{{ workshop.category.name }}</a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ workshop.name }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<div class="row mb-3 d-flex justify-content-center" >
+					<div class="col-10">
+						{% include 'workshop/menu.sub.html.twig' %}
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h4>{{ 'Add' | trans }} {{ 'Proposal' | trans | lower }}</h4>
+						<div class="card">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-12">
+										{% form_theme form 'bootstrap_4_layout.html.twig' %}
+										{{ form(form) }}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+{% endblock %}

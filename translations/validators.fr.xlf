@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="username.alreadyexists">
+                <source>username.alreadyexists</source>
+                <target>Il existe déjà un compte avec ce nom d'utilisateur</target>
+            </trans-unit>
+            <trans-unit id="email.alreadyexists">
+                <source>email.alreadyexists</source>
+                <target>Il existe déjà un compte avec cet email</target>
+            </trans-unit>
+            <trans-unit id="email.notvalid">
+                <source>email.notvalid</source>
+                <target>L'email n'est pas valide</target>
+            </trans-unit>
+            <trans-unit id="length.min.6">
+                <source>length.min.6</source>
+                <target>6 caractères minimum</target>
+            </trans-unit>
+            <trans-unit id="length.max.40">
+                <source>length.max.40</source>
+                <target>40 caractères maximum</target>
+            </trans-unit>
+            <trans-unit id="length.max.1024">
+                <source>length.max.1024</source>
+                <target>1024 caractères maximum</target>
+            </trans-unit>
+			<trans-unit id="name.alreadyexists">
+				<source>name.alreadyexists</source>
+				<target>Ce nom existe déjà</target>
+			</trans-unit>
+			
+        </body>
+    </file>
+</xliff>

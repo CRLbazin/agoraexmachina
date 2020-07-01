@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<main main="role">
+		<div class="container">
+			{% if categories is empty %}
+				{% include 'default/jumbotron.html.twig' %}
+			{% else %}
+				<div class="row row-cols-1 d-flex justify-content-around ">
+					{% for category in categories %}
+						<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4" style="max-width:290px">
+							<a href="{{path('workshop_index', {'slug' : category.name | slugify, 'category' : category.id })}}" class="card-link">
+								<div class="card shadow-sm h-100">
+									{% if category.image %}
+										<img class="bd-placeholder-img card-img-top" width="260" height="225" src="{{ vich_uploader_asset(category, 'imageFile') | imagine_filter('categories_home')}}" />
+									{% else %}
+										<img class="bd-placeholder-img card-img-top"  width="260" height="225" src="{{ asset('img/logo_aem-lg.png') }}" />
+									{% endif %}
+									<div class="card-body">
+										<h4 class="card-title">{{ category.name }}</h4>
+										<p class="card-text">
+											{% if category.description | length > 140 %}
+												{{ category.description | truncate(140, true)|raw}}
+												<span class="badge badge-secondary" data-toggle="tooltip" data-placement="top" title="{{category.description}}">Suite</span>
+											{% else %}
+												{{ category.description }}
+											{% endif %}
+										</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+	</main>
+{% endblock %}

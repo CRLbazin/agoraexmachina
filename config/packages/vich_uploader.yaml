@@ -1,0 +1,16 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        categories_images:
+            uri_prefix: '%categories_images_directory%'
+            upload_destination: '%kernel.project_dir%/public/img/upload/categories'
+            namer: vich_uploader.namer_uniqid
+        workshops_images:
+            uri_prefix: '%workshops_images_directory%'
+            upload_destination: '%kernel.project_dir%/public/img/upload/workshops'
+            namer: vich_uploader.namer_uniqid
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

@@ -1,0 +1,290 @@
+@font-face {
+	font-family: cgfont;
+	src: url(../fonts/gothic.ttf);
+}
+
+@font-face {
+	font-family: Nunito;
+	src: url(../fonts/Nunito-Regular.ttf);
+}
+
+html, body {
+    margin: 0;
+    font-family: Nunito,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #343a40 !important;
+    text-align: left;
+    background-color: #f5f5f5;
+}
+
+
+a, button
+{	
+    color: #343a40;
+}
+
+main 
+{
+	margin-top : 90px;
+    overflow: hidden;
+    padding: 10px;
+    min-height: 100vh;
+}
+
+
+nav.sidebar-grey + main
+{
+	margin-left : 75px;
+}
+
+
+
+.sidebar {
+	position: fixed;
+	top : 0px;
+	bottom: 0;
+	left: 0;
+	z-index: 100; /* Behind the navbar */
+	padding: 90px 0 0; /* Height of navbar */
+	box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+	min-width : 70px;
+}
+
+.sidebar-dark 
+{
+	color: rgba(255,255,255,.9);
+}
+.sidebar-dark .nav .nav-item .nav-link 
+{
+	color: #cedce4;
+    display: block;
+    padding: 10px 30px;
+    position: relative;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+	color: rgba(255,255,255,.5);
+}
+
+.breadcrumb 
+{
+    font-size: 14px;
+    padding: .35rem 0.6rem;
+    margin-bottom: 0rem;
+	background : transparent;
+	color : grey;
+}
+
+.sidebar-dark .nav .nav-item .active
+{
+	color: rgba(255,255,255,1) !important;
+	font-weight: bold;
+}
+
+.sidebar-grey .nav .nav-item .active
+{
+	color: #555 !important;
+	font-weight: bold;	
+}
+
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+}
+
+.avatar
+{
+	width: 50px;
+	height: 50px;
+	text-align : center;
+	color : white;
+	font-weight : bold;
+	border-radius: 50%;
+	padding-top : 3px;
+}
+
+.avatar-list
+{
+	border : 1px solid white;
+	margin-left : -5.5px;
+}
+
+.avatar-sm
+{
+	width: 35px;
+	height: 35px;
+	padding-top : 5px;
+}
+
+.avatar-xs
+{
+	width: 20px;
+	height: 20px;
+	padding-top : 1px;
+	font-size : 12px;
+}
+
+
+label
+{
+	font-weight: 600;
+	display: inline-block;
+    margin-bottom: .5rem;
+}
+
+
+.tooltip {
+	pointer-events: none;
+}
+
+.card-link, .card-link:hover
+{
+	text-decoration: none !important;
+	color : #212529;
+}
+
+.card-link + .card-link 
+{
+	margin-left: 0px !important;
+}
+
+@media (min-width: 540px) {
+    .card-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media (min-width: 800px) {
+    .card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1290px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1600px) {
+    .card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+.nav-link[data-toggle]:not(.collapsed):after {
+    content: " ▼";
+}
+
+
+.nav-link[data-toggle].collapsed:after {
+    content: " ⯈";
+}
+
+
+.active .img-thumbnail
+{
+	background-color : white !important;
+}
+
+.card > .progress {
+    height: 0.2rem;
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.progress {
+    display: flex;
+    height: 0.8rem;
+    overflow: hidden;
+    font-size: 0.75rem;
+    background-color: #dee2e6;
+    border-radius: 20rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link 
+{
+    color: #17a2b8;
+    background-color: #fff;
+}
+
+.swatch-400 {
+    color: #212529;
+    background-color: #ced4da;
+}
+
+.btn
+{
+	box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.no-shadow
+{
+	box-shadow:0 0 0 !important;
+}
+
+
+.arrow-left 
+{
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #EAEAEA!important;
+    border-top: 12px solid transparent;
+    display: block;
+    position: relative;
+    float: right;
+    top: 10px;
+    right: -15px;
+	background-color: transparent;
+}
+.arrow-right
+{
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid #EAEAEA!important;
+    border-top: 12px solid transparent;
+    display: block;
+    position: relative;
+    float: left;
+    top: 10px;
+    left: -15px;
+	background-color: transparent;
+}
+
+.arrow-right.arrow-white
+{
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid #FFF!important;
+    border-top: 12px solid transparent;
+	background-color: transparent;
+}
+
+.nav-proposal .nav-link.active
+{
+	color : #17a2b8;
+}

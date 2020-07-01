@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+
+			<main class="col-8 ml-sm-auto px-4">
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+					<h4 class="h4">{{'Delegations' | trans }}</h4>
+				</div>
+			
+				<div class="row">
+					<div class="col-12">
+						{{ form(form, {'attr' : { 'class' : 'col-10'}}) }}
+					</div>
+				</div>
+		</div>
+
+
+
+	{% endblock %}

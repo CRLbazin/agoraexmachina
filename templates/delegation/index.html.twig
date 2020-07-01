@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row">
+			<main class="col" id="content">
+				<div class="row mb-2" >
+					<div class="col-12 d-flex">
+						<h4 class="mr-auto">{{ 'List of' | trans }} {{ 'delegations' | trans | lower }} </h4>
+						<nav aria-label="breadcrumb text-secondary">
+							<ol class="breadcrumb text-small">
+								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ 'delegations' | trans }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+
+				<div class="row mb-3" >
+					<div class="col-12">				
+						<div class="card">
+							<div class="card-body">
+								<h5>{{ 'delegation.given' | trans }}
+									<hr />
+									<table class="table">
+										<thead class="thead-dark">
+											<tr>
+												<th scope="col" width="5%">#</th>
+												<th scope="col" width="15%">{{ 'UserFrom' | trans }}</th>
+												<th scope="col" width="15%">{{ 'UserTo' | trans }}</th>
+												<th scope="col" width="25%">{{ 'category' | trans }}</th>
+												<th scope="col" width="25%">{{ 'workshop' | trans }}</th>
+												<th scope="col" width="15%">{{ 'actions' | trans }}</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for d in delegationsFrom %}
+											<tr>
+												<th scope="row">{{ d.id }}</th>
+												<td>{{ d.UserFrom.username }}</td>
+												<td>{{ d.UserTo.username }}</td>
+												<td>{{ 'category' | trans }} {{ (d.category != "") ? d.category.name : "" }}</td>
+												<td>{{ 'workshop' | trans }} {{ (d.workshop != "") ? d.workshop.name : "" }}</td>
+												<td><a class="btn btn-secondary" href="#">{{ 'delete' | trans }}</a></td>
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+
+								<h5>{{ 'delegation.received' | trans }}
+									<hr />
+									<table class="table">
+										<thead class="thead-dark">
+											<tr>
+												<th scope="col" width="5%">#</th>
+												<th scope="col" width="15%">{{ 'UserFrom' | trans }}</th>
+												<th scope="col" width="15%">{{ 'UserTo' | trans }}</th>
+												<th scope="col" width="25%">{{ 'category' | trans }}</th>
+												<th scope="col" width="25%">{{ 'workshop' | trans }}</th>
+												<th scope="col" width="15%">{{ 'actions' | trans }}</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for d in delegationsTo %}
+											<tr>
+												<th scope="row">{{ d.id }}</th>
+												<td>{{ d.UserFrom.username }}</td>
+												<td>{{ d.UserTo.username }}</td>
+												<td>{{ 'category' | trans }} {{ (d.category != "") ? d.category.name : "" }}</td>
+												<td>{{ 'workshop' | trans }} {{ (d.workshop != "") ? d.workshop.name : "" }}</td>
+												<td><a class="btn btn-secondary" href="{{ path('delegation_delete', {'delegation' : d.id}) }}">{{ 'delete' | trans }}</a></td>
+											</tr>
+											{% endfor %}
+										</tbody>
+									</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+{% endblock %}

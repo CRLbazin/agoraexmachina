@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% set slug =  app.request.get('slug') %}
+	<div class="container-fluid">
+		<div class="row">
+			{% include 'category/menu.html.twig' %}
+
+			<main class="col" id="content">
+				<div class="row mb-2" >
+					<div class="col-12 d-flex">
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'List of' | trans }} {{ 'Workshops' | trans | lower }} {{ category.name }}</h4>
+						<nav aria-label="breadcrumb text-secondary">
+							<ol class="breadcrumb text-small">
+								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
+								<li class="breadcrumb-item active" aria-current="page">{{ category.name }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<div class="row mb-2" >
+					<div class="col-12">
+						{% include 'flashbag.html.twig' %}
+					</div>
+				</div>
+				<div class="row mb-3" >
+					<div class="col-12">
+						<div class="d-flex">
+							<div class="mr-auto">
+								{% if app.user %}
+									<div class="btn-group" role="group">
+										<a href="{{ path('workshop_index', {'category' : category.id, 'slug' : slug }) }}" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> {{ 'back' | trans }}</a>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mb-3" >
+					<div class="col-12">	
+						<div class="card">
+							<div class="card-body">
+								{% form_theme form 'bootstrap_4_layout.html.twig' %}
+								{{ form(form) }}
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+{% endblock %}
