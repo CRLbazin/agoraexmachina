@@ -10,6 +10,9 @@ Nous avons planifié un ensemble de développements à effectuer, visant à amé
     * Faire en sorte que l'interface par défaut soit en français.
 * Interface
     * rendre possible lors de l'installation la traduction en français de l'interface
+    * corriger l'interface de création d'user
+* Identification
+    * Ajouter une fonctionnalité "Mot de passe Oublié"
 * Langues
     * Effectuer la traduction complète du fichier *translations/messages.fr.xlf* en Allemand (optionnel).
 
@@ -38,7 +41,11 @@ Par contre, on ne peut associer à un **Thème** ou un **Atelier** qu'une seule 
 
 ### Autre typologie pour le système de catégories
 
-Comme le terme "Catégorie" désigne déjà un objet éditorial, nous proposons que le terme **Categorie** soit remplacé par le terme **Thème** et que l'ajout d'une nouvelle forme catégorielle soit désignée par le terme ** Catégorie**.
+Comme le terme "Catégorie" désigne déjà un objet éditorial, nous proposons que le terme **Categorie** soit remplacé par le terme **Thème** et que l'ajout d'une nouvelle forme catégorielle soit désignée par le terme **Catégorie**.
+
+### Passer la délégation au nieavu Workshop
+
+Pour l'instant, seule les **Categories** (voir plus haut) sont soumises à la délégation. Or, on peut très bien être expert d'un domaine d'une **Categorie** et pas d'une autre. Il faut donc que ce soient les **Workshops** qui soient soumis à délégation potentielle.
 
 ### Visibilité sur l'espace public
 
@@ -46,20 +53,35 @@ L'administrateur devrait pouvoir définir si le vote est confidentiel ou public.
 
 Dans tous les cas, il faut être inscrit pour se loguer, voter, et déléguer.
 
-##V1.2
+### Interface Administrateur
+
+L'administrateur devrait avoir accès à une interface lui permettant de définir :
+* le nom du site
+* Éventuellement un slogan
+* Le logo du site
+* l'adresse du site (par exemple https://democratie.mondomaine.com)
+* l'adresse du webMestre
+
+### Mise en place de la timeline
+
+## V1.2
 
 ### Un objet thémable
 
 L'aspect public d'**AEM** est construit avec le moteur de vues `twig`. Dans l'idée future qu'une même plateforme puisse héberger les votations de plusieurs structures - et qu'à une **Catégorie** particulière on puisse assigner un aspect défini, obéissant à la charte graphique de la **Catégorie** -, On doit alors considérer qu'une structure globale des moteurs de vues puisse être envisagé. C'est un travail au long cours qui impacte de nombreuses choses - par exemple, une structure peut demander à ce que le champ lexical de "son" interface soit différente de celle du voisin, ... - et qui nécessite donc d'évaluer et d'imaginer la structure. Au minimum doit-on pouvoir donner le moyen d'avoir les classes nécessaires au bon fonctionnement d'une attribution de templates différents.
 
-###Granulosité des profils
+### Granulosité des profils
 
 C'est le moment de définir :
 
 * Le profil **Webmestre** dont l'objet est la maintenance technique globale de la plateforme et donc accès aux informations de debug (différente du profil **Administrateur** qui n'a accès qu'aux infos de base relatives à la plateforme).
 * Un profil **Administrateur restreint** est ajouté. Il est associé à une ou plusieurs catégories et peut ainsi n'administrer que la partie des votes le concernant. Par exemple, cohabitent au sein de la même plateforme une association et une mairie dont l'une demande régulièrement des subventions à l'autre. Il paraît logique que la ville n'ait jamais vent des votations effectuées par l'association, et inversement. Éventuellement, un **Administrateur restreint** peut être inscrit en tant que votant dans une ou plusieurs autres catégories. Il aura alors les informations relatives aux votes. Il peut bien sûr être désigné en délégation (voir plus haut).
 
-##V1.3
+### Interface Utilisateur
+Le titre parle de lui-même, il faut permettre à l'utilisateur de pouvoir contrôler comment il apparaît sur la plateforme, ajouter des informations s'il le désire pour enrichir son avatar.
+De la même façon, il pourrait être intéressant d'avoir accès à une interface de présentation de chacun des avatars inscrits sur la plateforme, avec un historique des propositions ou des workshops qu'il ou elle a créé.
+
+## V1.3
 
 ### Accepter d'autres tables utilisateurs
 
