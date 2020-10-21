@@ -2,7 +2,7 @@
 
 Nous avons planifié un ensemble de développements à effectuer, visant à améliorer l'installation et le fonctionnement d'**AEM**.
 
-##V1.0
+## V1.0
 * Normalisation complète de l'installation permettant que cela puisse se faire dans les meilleures conditions possibles.
     * Rendre possible l'installation sans composer (certaines plateformes d'hébergement fonctionnant peu ou mal avec **SSH**)
     * permettre l'installation de la base de données en `utf8_unicode_ci` (des serveurs de base de données ne supportant pas `utf8mb4`
@@ -16,7 +16,7 @@ Nous avons planifié un ensemble de développements à effectuer, visant à amé
 * Langues
     * Effectuer la traduction complète du fichier *translations/messages.fr.xlf* en Allemand (optionnel).
 
-##V1.1
+## V1.1
 ### Normalisation de l'installation
 
 Mise en place d'une interface d'installation en GUI 
@@ -72,13 +72,14 @@ L'aspect public d'**AEM** est construit avec le moteur de vues `twig`. Dans l'id
 
 ### Granulosité des profils
 
-C'est le moment de définir :
+Il est temps de définir :
 
 * Le profil **Webmestre** dont l'objet est la maintenance technique globale de la plateforme et donc accès aux informations de debug (différente du profil **Administrateur** qui n'a accès qu'aux infos de base relatives à la plateforme).
 * Un profil **Administrateur restreint** est ajouté. Il est associé à une ou plusieurs catégories et peut ainsi n'administrer que la partie des votes le concernant. Par exemple, cohabitent au sein de la même plateforme une association et une mairie dont l'une demande régulièrement des subventions à l'autre. Il paraît logique que la ville n'ait jamais vent des votations effectuées par l'association, et inversement. Éventuellement, un **Administrateur restreint** peut être inscrit en tant que votant dans une ou plusieurs autres catégories. Il aura alors les informations relatives aux votes. Il peut bien sûr être désigné en délégation (voir plus haut).
 
 ### Interface Utilisateur
 Le titre parle de lui-même, il faut permettre à l'utilisateur de pouvoir contrôler comment il apparaît sur la plateforme, ajouter des informations s'il le désire pour enrichir son avatar.
+
 De la même façon, il pourrait être intéressant d'avoir accès à une interface de présentation de chacun des avatars inscrits sur la plateforme, avec un historique des propositions ou des workshops qu'il ou elle a créé.
 
 ## V1.3
@@ -99,13 +100,13 @@ Permettre à l’Administrateur de déplacer les délégations / droits de vote 
 
 Par défaut, la profondeur des threads de forms est de 1. Donner à l'**Administrateur** ou l'**Administrateur restreint** la possibilité de modifier cette profondeur (jusqu'à trois).
 
-##Divers
+## Divers
 
-###Documentation
+### Documentation
 Un ensemble de documentation doit pouvoir être apporté à l'administrateur non-technicien. Vu l'évolution prévue de la plateforme, il faut mettre en place, parallèlement à l'évolution de la plateforme un système de documentation permettant :
 
 * une documentation point par point / item développé
 * un système de traduction de ladite documentation, au moins en anglais et en allemand.
 
-###Sécurité
+### Sécurité
 Étant donné le principe collaboratif de développement de la plateforme **AEM**, organiser régulièrement lors de hackathons des concours de hacking pour vérifier la solidité sécuritaire de la plateforme.
