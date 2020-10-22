@@ -24,7 +24,7 @@ Mise en place d'une interface d'installation en GUI
 * Messages d’erreur explicites ("Votre adresse de base de données n'est pas bonne", "Connexion à votre base de données impossible", "Changer les droits d’accès aux répertoires xxx, yyy, zzz" ou au fichier gna.php, etc.)
 * Choix d'installation (le répertoire dans lequel est installé AEM devrait être au choix de la personne qui installe ; l'adresse de base peut être choisie (democratie.mondomaine.org).
 * Saisie directe du profil du premier administrateur depuis l'interface. Éventuellement, proposer la première personne inscrite comme webmestre (ajout d'un statut)
-* ajout de préfixe pour les tables.
+* ajout de préfixe pour les tables de la base de données.
 
 ### Multilinguisme
 
@@ -43,15 +43,25 @@ Par contre, on ne peut associer à un **Thème** ou un **Atelier** qu'une seule 
 
 Comme le terme "Catégorie" désigne déjà un objet éditorial, nous proposons que le terme **Categorie** soit remplacé par le terme **Thème** et que l'ajout d'une nouvelle forme catégorielle soit désignée par le terme **Catégorie**.
 
-### Passer la délégation au nieavu Workshop
+### Délégation
 
 Pour l'instant, seule les **Categories** (voir plus haut) sont soumises à la délégation. Or, on peut très bien être expert d'un domaine d'une **Categorie** et pas d'une autre. Il faut donc que ce soient les **Workshops** qui soient soumis à délégation potentielle.
+
+Les délégations doivent pouvoir se faire séparément :
+
+* Pour les votes
+* Ajout de propositions
+* Participations au forums.
 
 ### Visibilité sur l'espace public
 
 L'administrateur devrait pouvoir définir si le vote est confidentiel ou public. Dans le premier cas, seules les personnes pouvant se loguer sur la plateforme ET ayant les droits par le système de catégorisation précédent peuvent accéder aux informations relatives à une ou plusieurs votations. Dans le second, les personnes ont accès aux informations du vote dans l'espace public, même non loguées. Elles ne peuvent pas voter.
 
 Dans tous les cas, il faut être inscrit pour se loguer, voter, et déléguer.
+
+### Identification
+
+Lorsque une personne s'inscrit d'elle même sur la plateforme, il parait indispensable d'avoir un système d'identification *ad minima* qui permet de savoir si l'email de contact est valable par un système de validation de l'inscription.
 
 ### Interface Administrateur
 
@@ -61,8 +71,6 @@ L'administrateur devrait avoir accès à une interface lui permettant de défini
 * Le logo du site
 * l'adresse du site (par exemple https://democratie.mondomaine.com)
 * l'adresse du webMestre
-
-### Mise en place de la timeline
 
 ## V1.2
 
@@ -77,10 +85,22 @@ Il est temps de définir :
 * Le profil **Webmestre** dont l'objet est la maintenance technique globale de la plateforme et donc accès aux informations de debug (différente du profil **Administrateur** qui n'a accès qu'aux infos de base relatives à la plateforme).
 * Un profil **Administrateur restreint** est ajouté. Il est associé à une ou plusieurs catégories et peut ainsi n'administrer que la partie des votes le concernant. Par exemple, cohabitent au sein de la même plateforme une association et une mairie dont l'une demande régulièrement des subventions à l'autre. Il paraît logique que la ville n'ait jamais vent des votations effectuées par l'association, et inversement. Éventuellement, un **Administrateur restreint** peut être inscrit en tant que votant dans une ou plusieurs autres catégories. Il aura alors les informations relatives aux votes. Il peut bien sûr être désigné en délégation (voir plus haut).
 
-### Interface Utilisateur
+### Menu Interface Utilisateur
 Le titre parle de lui-même, il faut permettre à l'utilisateur de pouvoir contrôler comment il apparaît sur la plateforme, ajouter des informations s'il le désire pour enrichir son avatar.
 
 De la même façon, il pourrait être intéressant d'avoir accès à une interface de présentation de chacun des avatars inscrits sur la plateforme, avec un historique des propositions ou des workshops qu'il ou elle a créé.
+
+### Modération
+
+Une interface de modération devrait être apportée pour l'**Administrateur** ou l'**Administrateur restreint** concernant notamment les propositions et threads de forums. La modération devrait pouvoir être réglée *a priori* ou *a fortiori*. L'**Administrateur** ou l'**Administrateur restreint** doivent pouvoir bannir temporairement ou définitivement un utilisateur en focntion de son comportement sur la plateforme
+
+### Mise en place de la timeline (approche théorique)
+
+Le dispositif de timeline n'est pas opérationnel àl'heure actuelle, mais révu dans l'interface. Il permet de suivre visuellement l'évolution du vote et de l'implication des inscrits dans le processus de votation. Il faut développer théoriquement cette fonction, par exemple :
+
+* Faut-il que l'administrateur du Workshop /thème puisse mettre en place des milesteps (x votes, y threads de forums, ...) ?
+* Qu'est-ce qui est vraiment intéressant dans l'évaluation visuelle rapide d'un processus de vote ?
+* ...
 
 ## V1.3
 
@@ -99,6 +119,10 @@ Permettre à l’Administrateur de déplacer les délégations / droits de vote 
 ### Régler la profondeur par défaut des forums
 
 Par défaut, la profondeur des threads de forms est de 1. Donner à l'**Administrateur** ou l'**Administrateur restreint** la possibilité de modifier cette profondeur (jusqu'à trois).
+
+### Timeline
+
+En fonction des propositions faites pour la version 1.2 concerant les informations auxquelles on devrait avoir accès en visionnant la timeline, la développer.
 
 ## Divers
 
