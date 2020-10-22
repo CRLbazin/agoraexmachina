@@ -15,6 +15,8 @@ Nous avons planifié un ensemble de développements à effectuer, visant à amé
     * Ajouter une fonctionnalité "Mot de passe Oublié"
 * Langues
     * Effectuer la traduction complète du fichier *translations/messages.fr.xlf* en Allemand (optionnel).
+* RGPD
+    * Inclure par défaut des informations relatives à l'utilisation des données personnelles.
 
 ## V1.1
 ### Normalisation de l'installation
@@ -71,6 +73,7 @@ L'administrateur devrait avoir accès à une interface lui permettant de défini
 * Le logo du site
 * l'adresse du site (par exemple https://democratie.mondomaine.com)
 * l'adresse du webMestre
+* Le texte relatif au RGPD.
 
 ## V1.2
 
