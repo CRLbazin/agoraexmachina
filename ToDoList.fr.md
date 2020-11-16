@@ -11,6 +11,8 @@ Nous avons planifié un ensemble de développements à effectuer, visant à amé
 * Interface
     * rendre possible lors de l'installation la traduction en français de l'interface
     * corriger l'interface de création d'user
+    * Lors de l'ajout d'image ou de fichier, le lien vers le fichier local, ou le fait que la manipulatyion soit prise en compte n'est pas affiché. À corriger.
+    * Ajout de Workshop : par défaut, la création d'atelier devrait se faire dans la Catégorie dans laquelle on se truve. Là, c'est toujours la première de la liste id=1 qui est affichée en premier.
 * Identification
     * Ajouter une fonctionnalité "Mot de passe Oublié"
 * Langues
@@ -105,6 +107,11 @@ Le dispositif de timeline n'est pas opérationnel àl'heure actuelle, mais révu
 * Qu'est-ce qui est vraiment intéressant dans l'évaluation visuelle rapide d'un processus de vote ?
 * ...
 
+## Divers
+### Fonctionnalités
+* Accepter une mise en page pour le descriptif des Thèmes
+* Ajouter dans l'interface **Administrateur** (créateur de Thèmes et d'Ateliers), y compris **Administrateur restreint** (mais dans ce cas, les restrictions aux Thèmes qu'il ou elle a créé s'apprliquent), la possibilité de déplacer un Atelier d'un Thème à l'autre.
+
 ## V1.3
 
 ### Accepter d'autres tables utilisateurs
@@ -134,6 +141,10 @@ Un ensemble de documentation doit pouvoir être apporté à l'administrateur non
 
 * une documentation point par point / item développé
 * un système de traduction de ladite documentation, au moins en anglais et en allemand.
+
+### Fonctionnalités
+* Ajouter le svg dans les formats acceptés pour les images.
+* Indiquer un rapport d'image dans l'interface permettant de savoir quelle est la taille de l'image affichée (dans le formulaire de téléchargement d'image).
 
 ### Sécurité
 Étant donné le principe collaboratif de développement de la plateforme **AEM**, organiser régulièrement lors de hackathons des concours de hacking pour vérifier la solidité sécuritaire de la plateforme.
