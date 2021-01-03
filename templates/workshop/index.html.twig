@@ -9,7 +9,7 @@
 			<main class="col" id="content">
 				<div class="row mb-2" >
 					<div class="col-12 d-flex">
-						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'List of' | trans }} {{ 'Workshops' | trans | lower }} {{ category.name }}</h4>
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'list_of' | trans }} {{ 'workshops' | trans | lower }} {{ category.name }}</h4>
 						<nav aria-label="breadcrumb text-secondary">
 							<ol class="breadcrumb text-small">
 								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
@@ -29,7 +29,7 @@
 							<div class="mr-auto">
 								{% if app.user %}
 									<div class="btn-group" role="group">
-										<a href="{{ path('workshop_add_byuser', {'category' : category.id, 'slug' : slug }) }}" class="btn btn-primary "><i class="fas fa-plus"></i> {{ 'Add' | trans }}</a>
+										<a href="{{ path('workshop_add_byuser', {'category' : category.id, 'slug' : slug }) }}" class="btn btn-primary "><i class="fas fa-plus"></i> {{ 'add' | trans }}</a>
 									</div>
 								{% endif %}
 							</div>
@@ -46,7 +46,7 @@
 							</div>
 							<div>
 								<div class="btn-group" role="group">
-									<input id="search" type="search" class="form-control bg-light input-sm" placeholder="{{ 'Search' | trans }}..." value="{{ (app.request.get('search')) }}"/>					
+									<input id="search" type="search" class="form-control bg-light input-sm" placeholder="{{ 'search' | trans }}..." value="{{ (app.request.get('search')) }}"/>					
 									<a href="#" onclick="searching()" class="btn btn-secondary " ><i class="fas fa-search"></i></a>
 								</div>
 							</div>
@@ -122,13 +122,13 @@
 														<div class="col-3 text-secondary">
 															<div class="card-text d-flex {{(app.request.get('view') == "tile")  ? "pt-3 pb-3 justify-content-between" : "flex-column" }}">
 																<p>{{ status(workshop.dateEnd) }}</p>
-																<p><i class="fas fa-clock"></i> {{ 'Start' | trans}} {{ workshop.dateBegin | date("d/m/Y")}}</p>
-																<p><i class="fas fa-clock"></i> {{ 'End' | trans}} {{ workshop.dateEnd |date("d/m/Y")}}</p>
+																<p><i class="fas fa-clock"></i> {{ 'start' | trans}} {{ workshop.dateBegin | date("d/m/Y")}}</p>
+																<p><i class="fas fa-clock"></i> {{ 'end' | trans}} {{ workshop.dateEnd |date("d/m/Y")}}</p>
 															</div>
 														</div>
 														<div class="col-4 text-secondary">
-															<p class="mr-auto"><i class="fas fa-poll"></i> {{ workshop.proposals | length }} {{ 'Proposals' | trans}}</p>
-															<p><i class="fas fa-comments"></i> {{ workshop.proposals | length }} {{ 'Forums' | trans }}</p>
+															<p class="mr-auto"><i class="fas fa-poll"></i> {{ workshop.proposals | length }} {{ 'proposals' | trans}}</p>
+															<p><i class="fas fa-comments"></i> {{ workshop.proposals | length }} {{ 'forums' | trans }}</p>
 															<div class="d-flex d-flex-nowrap mt-2">
 																<div class="avatar avatar-list avatar-sm bg-light text-secondary">CB</div>
 																<div class="avatar avatar-list avatar-sm bg-light text-secondary">CB</div>

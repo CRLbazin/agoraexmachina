@@ -8,7 +8,7 @@
 			<main class="col" id="content">
 				<div class="row mb-2" >
 					<div class="col-12 d-flex">
-						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'Workshop' | trans }} {{ workshop.name }}</h4>
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'workshop' | trans }} {{ workshop.name }}</h4>
 						<nav aria-label="breadcrumb  text-secondary">
 							<ol class="breadcrumb text-small">
 								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
@@ -34,7 +34,7 @@
 							<div class="d-flex">
 								<div class="mr-auto">
 									<div class="btn-group" role="group">
-										<a href="{{ path('forum_add', {'workshop' : workshop.id, 'slug' : workshop.category.name | slugify ~ '_' ~ workshop.name | slugify}) }}" class="btn btn-primary "><i class="fas fa-plus"></i> {{ 'Add' | trans }}</a>
+										<a href="{{ path('forum_add', {'workshop' : workshop.id, 'slug' : workshop.category.name | slugify ~ '_' ~ workshop.name | slugify}) }}" class="btn btn-primary "><i class="fas fa-plus"></i> {{ 'add' | trans }}</a>
 									</div>
 								</div>
 							</div>

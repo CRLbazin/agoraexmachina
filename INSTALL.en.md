@@ -48,6 +48,13 @@
 * In the phpMyadmin interface (or command line), add `["ROLE_ADMIN"]` in the `user` table, column `roles`. This action allows you to become administrator. 
 * You may have to log in again with your new status.
 
+### And then
+
+* It is possible to modify a number of variables in the `config/services.yaml` file, among them :
+  * the name of your site (displayed in the menu and in the title tag of the `html` page.
+  * The name of the structure that houses the site
+  * The language, lang and writing (for some tags, see the `templates/base.html.twig` file for more details).
+
 ## Remarks
 The liquid democracy solution is under development, and some installation bugs remain. Don't despair during installation. These few tips will surely help you: 
 

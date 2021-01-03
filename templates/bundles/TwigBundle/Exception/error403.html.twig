@@ -10,8 +10,8 @@
     <img class="mb-4 bg-white rounded" src="{{ asset('img/logo_aem.png') }}" alt width="72" height="72" />    
     
     <div class="mb-3">
-	{{ 'You do not have the right to access this page' | trans }}.
-	<br /><a href="{{ path('homepage') }}">{{ 'Home' | trans }}</a>
+	{{ 'error403' | trans }}.
+	<br /><a href="{{ path('homepage') }}">{{ 'home' | trans }}</a>
     </div>
 </form>
 {% endblock %}

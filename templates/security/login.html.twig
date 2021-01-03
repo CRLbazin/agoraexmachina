@@ -20,14 +20,14 @@
 						<br /><a href="{{ path('app_logout') }}">{{ 'Logout' | trans }}</a>
 					</div>
 				{% else %}
-					<h3 class="mb-3">{{'Sign in please' | trans }}</h3>
-					<input type="email" name="email" id="inputEmail" class="form-control mb-3" required autofocus placeholder="{{'Email' | trans }}" />
-					<input type="password" name="password" id="inputPassword" class="form-control" required placeholder="{{ 'Password' | trans }}" />
+					<h3 class="mb-3">{{'signin.please' | trans }}</h3>
+					<input type="email" name="email" id="inputEmail" class="form-control mb-3" required autofocus placeholder="{{'email' | trans }}" />
+					<input type="password" name="password" id="inputPassword" class="form-control" required placeholder="{{ 'password' | trans }}" />
 					<hr />
 					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
-					<button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'Signin' | trans }}</button>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'signin' | trans }}</button>
 					<br />
-					<a href="{{path('app_register')}}">{{ 'Or create an account' | trans  }}</a>
+					<a href="{{path('app_register')}}">{{ 'or_create_account' | trans  }}</a>
 				{% endif %}
 			</form>
 		</div>

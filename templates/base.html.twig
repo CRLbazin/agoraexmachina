@@ -1,8 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="{% block language %}{{params.website.language}}{% endblock %}" dir="{% block ecriture %}{{params.website.ecriture}}{% endblock %}">
     <head>
         <meta charset="UTF-8">
+		<meta name="robots" content="noindex, nofollow">
         <title>{% block title %}{{params.website.title}}{% endblock %}</title>
+        <link rel="canonical" href="http://mobile-adenum.fr/demo-bischheim/public">
+        <meta property="og:site_name" content="{{params.website.title}}" />
+        <meta property="og:locale" content="{% block lang %}{{params.website.lang}}{% endblock %}" />
+		<meta property="og:title" content="{{params.website.title}}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://mobile-adenum.fr/demo-bischheim/public" />
+		<meta property="og:image" content="{{ absolute_url(asset('img/logo_aem-lg.png')) }}" />
+		<link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+		<link rel="icon" href="{{ asset('img/favicon.png') }}" type="image/png">
+		<link rel="icon" sizes="32x32" href="{{ asset('img/logo_aem-32.png') }}" type="image/png">
+		<link rel="icon" sizes="64x64" href="{{ asset('img/logo_aem-64.png') }}" type="image/png">
+		<link rel="icon" sizes="96x96" href="{{ asset('img/logo_aem-96.png') }}" type="image/png">
+		<link rel="icon" sizes="196x196" href="{{ asset('img/logo_aem-196.png') }}" type="image/png">
+		<link rel="apple-touch-icon" sizes="60x60" href="{{ asset('img/logo_aem-60.png') }}">
+		<link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/logo_aem-76.png') }}">
+		<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/logo_aem-114.png') }}">
+		<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('img/logo_aem-120.png') }}">
+		<link rel="apple-touch-icon" sizes="144x144" href="{{ asset('img/logo_aem-144.png') }}">
+		<meta name="msapplication-TileImage" content="{{ asset('img/logo_aem-144.png') }}">
+		<meta name="msapplication-TileColor" content="#FFFFFF"> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
         {% block stylesheets %}
 			<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
 			<link href="{{ asset('css/main.css') }}" rel="stylesheet"/>

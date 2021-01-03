@@ -48,6 +48,13 @@
 * Fügen Sie in der phpMyadmin-Schnittstelle (oder Befehlszeile) `["ROLE_ADMIN"]` zur Tabelle `user`, Spalte `roles` hinzu. Mit dieser Aktion können Sie Administrator werden.
 * Möglicherweise müssen Sie sich mit Ihrem neuen Status erneut anmelden.
 
+### Und dann
+
+* Es ist möglich, eine Reihe von Variablen in der Datei `config/services.yaml` zu ändern. indem mi diese :
+  * der Name Ihrer Seite (wird im Menü und im Titel-Tag der `html` seite angezeigt
+  * Die Nummer der Struktur, in der sich die Site befindet
+  * Die Sprache, lang und writing (für einige Tags, siehe die Datei `templates/base.html.twig` für weitere Details).
+
 ## Bemerkungen
 Die Lösung für eine flüssige Demokratie ist in der Entwicklung, und einige Installationsfehler bleiben bestehen. Verzweifeln Sie nicht während der Installation. Diese wenigen Tipps werden Ihnen sicherlich helfen: 
 

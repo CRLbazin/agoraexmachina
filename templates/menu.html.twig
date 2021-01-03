@@ -1,10 +1,10 @@
 <nav class="navbar fixed-top d-flex flex-row flex-nowrap px-md-4 bg-white border-bottom shadow-md ">
-    <h3 class="my-0 ">
+    <h1 class="my-0 ">
 		<a href="{{path('homepage')}}" class="navbar-brand text-secondary">
 			<h2>{{params.website.title}}</h2>
 		</a>
 
-    </h3>
+    </h1>
 	<div class="d-none d-sm-block"><span class="badge badge-primary">{{ params.website.version}} - #{{ params.website.name }}</span></div>
 
 	{% if app.user %}	
@@ -18,16 +18,16 @@
 			<div class="dropdown-menu dropdown-menu-lg-right shadow-sm">
 				<h4 class="p-2">{{ app.user.username }}</h4>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="{{ path('delegation_index') }}"><i class="fas fa-people-arrows"></i> {{ 'Delegations' | trans }}</a>
+				<a class="dropdown-item" href="{{ path('delegation_index') }}"><i class="fas fa-people-arrows"></i> {{ 'delegations' | trans }}</a>
 				{% if is_granted('ROLE_ADMIN') %}
-					<a class="dropdown-item" href="{{path('admin')}}"><i class="fas fa-user-cog"></i> {{ 'Admin' | trans}}</a>
+					<a class="dropdown-item" href="{{path('admin')}}"><i class="fas fa-user-cog"></i> {{ 'admin' | trans}}</a>
 				{%endif%}
-				<a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i> {{ 'Logout' | trans }}</a>
+				<a class="dropdown-item" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i> {{ 'logout' | trans }}</a>
 			</div>
 		</div>
 	{% else %}
 		<div class="ml-auto">	    
-			<a class="btn btn-outline-primary" href="{{path('app_login')}}">{{ 'Signin' | trans }}</a>
+			<a class="btn btn-outline-primary" href="{{path('app_login')}}">{{ 'signin' | trans }}</a>
 		</div>
 		{% endif %}
 </nav>

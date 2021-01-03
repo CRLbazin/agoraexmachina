@@ -45,8 +45,15 @@
 * Ajouter un compte (en haut à droite, **Signin**)
 * Cliquer sur **or create an account**
 * Créer votre compte 
-* Dans l'interface phpMyadmin (ou en ligne de commande), ajoutez `["ROLE_ADMIN"]` dans la table `user`, colonne `roles`. Cette action vous permet de devenir administrateur. (attention, ce ne sont pas de double quotes, mais deux simple quotes).
+* Dans l'interface phpMyadmin (ou en ligne de commande), ajoutez `["ROLE_ADMIN"]` dans la table `user`, colonne `roles`. Cette action vous permet de devenir administrateur.
 * Vous devrez peut-être vous loguer à nouveau avec votre nouveau statut.
+
+### Et ensuite
+
+* Il est possible de modifier un certain nombre de variables dans le fichier `config/services.yaml`. par mi celles-ci :
+  * le nom de votre site (affiché dans le menu et dans la balise title de la pahe `html`
+  * Le non de la structure qui abrite le site
+  * Le langage, la lang et l'écriture (pour certaines balises, voir dans le fichier `templates/base.html.twig` pour plus de détails).
 
 ## Remarques
 La solution de démocratie liquide est en développement, et quelques bugs d'installation restent. Ne désespérez pas lors de l'installation. Ces quelques conseils vous aideront surement : 
@@ -55,4 +62,4 @@ La solution de démocratie liquide est en développement, et quelques bugs d'ins
 * Si vous tentez d'installer AEM à l'aide des commandes `composer install --nodev --optimize --autoloader` et `sudo composer require symfony/dotenv:^4.4` et que vous recevez des messages d'erreur, vous pourrez copier le répertoire `vendor` à la racine de votre répertoire distant. En recommençant ensuite les mêmes lignes de commande, votre installation se déroulera sans accroc.
 * Lors de l'installation de la base de données, si vous avez des messages d'erreur faisant cas d'`utf8mb4_unicode_ci` non valide, il vous faudra faire cette installation manuellement en exportant le code des tables de la base (à partir de `user`) et de faire l'installation des tables directement, par exemple depuis votre interface phpMyAdmin, en corrigeant, pour la table `user` la chaine de caractères *utf8mb4_unicode_ci* par *utf8_unicode_ci*. Cette procédure peut être appliquée à l'ensemble des tables `user',  et suivantes.
 
-Pour tout bug relatif à l'intallation, veuillez vous adresser à l'auteur.
+Pour tout bug relatif à l'installation, veuillez vous adresser à l'auteur.**

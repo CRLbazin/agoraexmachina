@@ -137,23 +137,23 @@
 			</trans-unit>
 			<trans-unit id="jumbotron.1">
 				<source>jumbotron.1</source>
-				<target>AGORA Ex Machina facilite la prise de décisions via la "démocratie liquide"</target>
+				<target>GORA Ex Machina facilite la prise de décisions via la "démocratie liquide".</target>
 			</trans-unit>
 			<trans-unit id="jumbotron.2">
 				<source>jumbotron.2</source>
-				<target>L'outil met à disposition un écosystème simple et intuitif pour gérer le cycle de vie de vos décisions, de l'idée de départ jusqu'à sa validation, en passant par les étapes de discussions, d'itérations et de votes</target>
+				<target>L'outil met à disposition un écosystème simple et intuitif pour gérer le cycle de vie de vos décisions, de l'idée de départ jusqu'à sa validation, en passant par les étapes de discussions, d'itérations et de votes.</target>
 			</trans-unit>
 			<trans-unit id="jumbotron.3">
 				<source>jumbotron.3</source>
-				<target>Le terme "Liquide" signifie qu'il est possible de déléguer ses votes de manière fluide et rapide</target>
+				<target>Le terme "Liquide" signifie qu'il est possible de déléguer ses votes de manière fluide et rapide. </target>
 			</trans-unit>
 			<trans-unit id="jumbotron.4">
 				<source>jumbotron.4</source>
-				<target>Pour commencer, vous devez vous connecter en tant qu'administrateur (nom d'utilisateur par défaut "admin" et mot de passe par défaut "password") et créer vos premières catégories. Les catégories regrouperont vos ateliers de discussions et de votes</target>
+				<target>Pour commencer, vous devez vous connecter en tant qu'administrateur (nom d'utilisateur par défaut "admin" et mot de passe par défaut "password") et créer vos premières catégories. Les catégories regrouperont vos ateliers de discussions et de votes.</target>
 			</trans-unit>
 			<trans-unit id="jumbotron.5">
 				<source>jumbotron.5</source>
-				<target>En cas de problème, nous sommes sur https://github.com/CRLbazin/agoraexmachina</target>
+				<target>n cas de problème, nous sommes sur https://github.com/CRLbazin/agoraexmachina.</target>
 			</trans-unit>
           
 		  
@@ -179,7 +179,7 @@
 			<trans-unit id="signin.already">
 				<source>signin.already</source>
 				<target>Vous êtes déjà connecté</target>
-			</trans-unit>			
+			</trans-unit>
 			<trans-unit id="username">
 				<source>username</source>
 				<target>Nom d'utilisateur</target>
@@ -191,7 +191,7 @@
 			<trans-unit id="roles">
 				<source>roles</source>
 				<target>Roles</target>
-			</trans-unit>    
+			</trans-unit>
 			<trans-unit id="email">
 				<source>email</source>
 				<target>Email</target>
@@ -206,7 +206,7 @@
 			</trans-unit>
 			<trans-unit id="or_sign_in">
 				<source>or_sign_in</source>
-				<target>Ou se connecter</target>
+				<target>Ou connectez-vous</target>
 			</trans-unit>
 			<trans-unit id="register">
 				<source>register</source>
@@ -289,8 +289,8 @@
 				<source>proposal</source>
 				<target>Proposition</target>
 			</trans-unit>		
-			<trans-unit id="addaproposal">
-				<source>addaproposal</source>
+			<trans-unit id="add_a_proposal">
+				<source>add_a_proposal</source>
 				<target>Ajouter une proposition</target>
 			</trans-unit>		
 			<trans-unit id="statusQuo">
@@ -384,7 +384,15 @@
 			<trans-unit id="reply">
 				<source>reply</source>
 				<target>Répondre</target>
-			</trans-unit>	
+			</trans-unit>
+
+			<!-- ******************************** -->
+			<!-- DIVERS -->
+			<!-- ******************************** -->
+			<trans-unit id="siteproposepar">
+				<source>siteproposepar</source>
+				<target>Ce site vous est proposé par</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

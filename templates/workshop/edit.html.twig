@@ -7,13 +7,13 @@
 			<main class="col-11 col-lg-10 ml-sm-auto">
 				<div class="row mb-2" >
 					<div class="col-12">
-						<h4>{{'Workshop' | trans }} : {{ form.vars.value.name }}</h4>
+						<h4>{{'workshop' | trans }} : {{ form.vars.value.name }}</h4>
 					</div>
 				</div>
 				<div class="row mb-2" >
 					<div class="col-12">
-						<a href="{{ path('workshop_admin') }}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left"></i> {{ 'List of' | trans }} {{ 'Categories' | trans | lower }}</a>
-						<a href="{{ path('workshop_delete', {'workshop' : form.vars.value.id}) }}" class="btn btn-danger btn-sm" data-toggle="deleteConfirmation"><i class="fas fa-trash-alt"></i> {{ 'Delete' | trans }}</a>
+						<a href="{{ path('workshop_admin') }}" class="btn btn-secondary btn-sm"><i class="fas fa-arrow-left"></i> {{ 'list_of' | trans }} {{ 'categories' | trans | lower }}</a>
+						<a href="{{ path('workshop_delete', {'workshop' : form.vars.value.id}) }}" class="btn btn-danger btn-sm" data-toggle="deleteConfirmation"><i class="fas fa-trash-alt"></i> {{ 'delete' | trans }}</a>
 					</div>
 				</div>
 				<div class="row mb-2" >

@@ -1,18 +1,14 @@
 <div class="card">
 	<h2 class="card-header bg-secondary text-white">{{params.website.title}}</h2>
 	<div class="card-body">
-		<p class="card-text">
-			{{'jumbotron.1' | trans }} .
-			<br /><br />
-			{{'jumbotron.2' | trans }}.
-			<br /><br />
-			{{'jumbotron.3' | trans }}.
-			<br /><br />
-			{{'jumbotron.4' | trans | raw }}.
-		</p>
-		<p class="card-text">
-			{{ 'jumbotron.5' | trans }}.
-		</p>
-		<a class="btn btn-primary" href="{{path('admin')}}" role="button"><i class="fas fa-user-cog"></i> {{'Admin' | trans }}</a>
+		<div class="card-img2">
+			<img width="260" height="225" src="{{ asset('img/logo_aem-lg.png') }}"  class="rounded mx-auto d-block" >
+		</div>
+		<h2 class="card-text" style="margin-top:1em;">{{'jumbotron.1' | trans }}</h2>
+		<p class="card-text">{{'jumbotron.2' | trans }}</p>
+		<p class="card-text">{{'jumbotron.3' | trans }}</p>
+		<p class="card-text">{{'jumbotron.4' | trans }}</p>
+		<p class="card-text">{{ 'jumbotron.5' | trans }}</p>
+		<a class="btn btn-primary" href="{{path('app_register')}}" role="button"><i class="fas fa-user-cog"></i> {{'register' | trans }}</a>
 	</div>
 </div>

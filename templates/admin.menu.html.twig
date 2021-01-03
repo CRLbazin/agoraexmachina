@@ -3,25 +3,25 @@
 		<li class="nav-item">
 			<a class="nav-link d-flex flex-row {{ 'admin' == app.request.attributes.get('_route') ? 'active' }}" href="{{path('admin')}}">
 				<div><i class="fas fa-tachometer-alt"></i>&nbsp;</div>
-				<div class="d-none d-lg-block">{{ 'Dashboard' | trans }}</div>
+				<div class="d-none d-lg-block">{{ 'dashboard' | trans }}</div>
 			</a>
 		</li> 
 		<li class="nav-item">
 			<a class="nav-link d-flex flex-row  {{ 'user_' in app.request.attributes.get('_route') ? 'active' }}" href="{{path('user_admin')}}">
 				<div><i class="fas fa-user"></i>&nbsp;</div>
-				<div class="d-none d-lg-block">{{'Users' | trans }}</div>
+				<div class="d-none d-lg-block">{{'users' | trans }}</div>
 			</a>
 		</li> 
 		<li class="nav-item">
 			<a class="nav-link d-flex flex-row  {{ 'category_' in app.request.attributes.get('_route') ? 'active' }}" href="{{path('category_admin')}}">
 				<div><i class="fas fa-folder"></i>&nbsp;</div>
-				<div class="d-none d-lg-block">{{'Categories' | trans }} </div>
+				<div class="d-none d-lg-block">{{'categories' | trans }} </div>
 			</a>
 		</li>  
 		<li class="nav-item">
 			<a class="nav-link d-flex flex-row  {{ 'workshop_' in app.request.attributes.get('_route') ? 'active' }}" href="{{path('workshop_admin')}}">
 				<div><i class="fas fa-poll"></i>&nbsp;</div>
-				<div class="d-none d-lg-block">{{'Workshops' | trans }} <span class="sr-only">(current)</span></div>
+				<div class="d-none d-lg-block">{{'workshops' | trans }} <span class="sr-only">(current)</span></div>
 			</a>
 		</li>          
 	</ul>
