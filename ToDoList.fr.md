@@ -5,13 +5,14 @@ Nous avons planifié un ensemble de développements à effectuer, visant à amé
 ##V1.0
 * Normalisation complète de l'installation permettant que cela puisse se faire dans les meilleures conditions possibles.
     * Rendre possible l'installation sans composer (certaines plateformes d'hébergement fonctionnant peu ou mal avec **SSH**)
-    * permettre l'installation de la base de données en `utf8_unicode_ci` (des serveurs de base de données ne supportant pas `utf8mb4`
+    * permettre l'installation de la base de données en `utf8_unicode_ci` (des serveurs de base de données ne supportant pas `utf8mb4`. Rq : ceci peut également être réglé dans les prérequis en identifiant précisément les versions php et mySQL.
     * Rendre le premier compte adminstrateur effectif (avec `["ROLE_ADMIN"]`)
     * [SOUMIS] Faire en sorte que l'interface par défaut soit en français.
     * Corrections de petits bugs divers, dont :
-      * Sur la page Users, l'administrateur ne peut en créer de nouveaux. Erreur de lien dans `twig` ?
+      * Sur la page Users, l'administrateur ne peut en créer de nouveaux.
 * Interface
     * [FAIT] rendre possible lors de l'installation la traduction en français de l'interface. En fait, intégration de "comment on fait" dans le fichier `INSTALL.md`.
+    * [SOUMIS] Dans la page `workshop/index.html.twig`, l'image pour chacun des workshops est celle de l'atelier, de la catégorie qui lui correspond, et du logo AEM sinon.
 * Langues
     * Effectuer la traduction complète du fichier *translations/messages.fr.xlf* en Allemand (optionnel) et en Anglais.
 
