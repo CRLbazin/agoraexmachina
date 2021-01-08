@@ -10,7 +10,7 @@
 			<main class="col" id="content">
 				<div class="row mb-2" >
 					<div class="col-12 d-flex">
-						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'Workshop' | trans }} {{ workshop.name }}</h4>
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'workshop' | trans }} {{ workshop.name }}</h4>
 						<nav aria-label="breadcrumb  text-secondary">
 							<ol class="breadcrumb text-small">
 								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
@@ -36,11 +36,11 @@
 						<div class="card">
 							<div class="card-body d-flex flex-column" style="padding:1rem;">
 								{% if app.user and date(workshop.dateEnd) > date() %}
-									<a href="{{ path('proposal_add', {'workshop' : workshop.id, 'slug' : slug }) }}" class="btn btn-primary "><i class="fas fa-plus"></i> {{ 'Add a proposal' | trans }}</a>
+									<a href="{{ path('proposal_add', {'workshop' : workshop.id, 'slug' : slug }) }}" class="btn btn-primary "><i class="fas fa-plus"></i> {{ 'add_a_proposal' | trans }}</a>
 									<br />
 								{% endif %}
 								<ul class="nav flex-column">
-									<span class="text-muted">{{ 'List of' | trans }} {{ 'Proposals' | trans | lower }}</span>
+									<span class="text-muted">{{ 'list_of' | trans }} {{ 'proposals' | trans | lower }}</span>
 									{% for p in proposals %}
 										<li class="nav-item nav-proposal">
 											<a class="nav-link {{ (proposal.id == p.id) ? 'active' }}" href="{{path('proposal_index', {'proposal' : p.id, 'workshop' : workshop.id, 'slug' : slug})}}">
@@ -121,7 +121,7 @@
 												</div>
 											{% endif %}
 											<h5>{{ proposal.name}}</h5>
-											<span class="text-muted"><div class="avatar avatar-xs float-left bg-primary">{{ proposal.user.username | first | capitalize }}</div>&nbsp;{{ 'From' | trans }} {{ proposal.user.username }}</span>
+											<span class="text-muted"><div class="avatar avatar-xs float-left bg-primary">{{ proposal.user.username | first | capitalize }}</div>&nbsp;{{ 'from' | trans }} {{ proposal.user.username }}</span>
 											<hr />
 											{{ proposal.description | raw }}
 										</div>
@@ -132,9 +132,9 @@
 								<div class="col-12">
 									<div class="card">
 										<div class="card-body">
-											<h5>{{ 'Forums' | trans }}</h5>
+											<h5>{{ 'forums' | trans }}</h5>
 											{% if app.user and date(workshop.dateEnd) > date() %}
-												<a href="{{ path('forum_add', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug }) }}" class="btn btn-primary m-1"><i class="fas fa-plus"></i> {{ 'Add' | trans }}</a>
+												<a href="{{ path('forum_add', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug }) }}" class="btn btn-primary m-1"><i class="fas fa-plus"></i> {{ 'add' | trans }}</a>
 											{% endif %}
 											{% for forum in proposal.forums %}
 												{% if forum.parentForum == "" %}
@@ -148,13 +148,13 @@
 																<div class="content" style="padding : 10px">
 																	{% if app.user and date(workshop.dateEnd) > date() %}
 																		<div class="btn-group m-1 float-right" role="group">
-																			<a href="{{ path('forum_answer', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : forum.id}) }}" class="btn btn-light "><i class="fas fa-reply"></i> {{ 'Reply' | trans }}</a>
+																			<a href="{{ path('forum_answer', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : forum.id}) }}" class="btn btn-light "><i class="fas fa-reply"></i> {{ 'reply' | trans }}</a>
 																			<a href="{{ path('forum_edit', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : forum.id}) }}" class="btn btn-light ml-1"><i class="fas fa-edit"></i></a>
 																			<a href="{{ path('forum_delete', {'workshop' : proposal.workshop.id, 'proposal' : proposal.id, 'slug' : slug, 'forum' : forum.id}) }}" class="btn btn-light ml-1" data-toggle="deleteConfirmation"><i class="fas fa-trash"></i></a>
 																		</div>
 																	{% endif %}
 																	<h5 class="card-title">{{forum.name}}</h5>
-																	<span class="text-muted">{{ 'From' | trans }} {{ forum.user.username }}</span>
+																	<span class="text-muted">{{ 'from' | trans }} {{ forum.user.username }}</span>
 																	<hr />
 																	<p class="card-text">{{forum.description | raw}}</p>
 																</div>
@@ -175,7 +175,7 @@
 																				</div>
 																			{% endif %}
 																			<h5 class="card-title">{{f.name}}</h5>
-																			<span class="text-muted">{{ 'From' | trans }} {{ f.user.username }}</span>
+																			<span class="text-muted">{{ 'from' | trans }} {{ f.user.username }}</span>
 																			<hr />
 																			<p class="card-text">{{f.description | raw}}</p>
 																		</div>

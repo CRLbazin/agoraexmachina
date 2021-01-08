@@ -1,8 +1,8 @@
 <ul class="nav nav-pills nav-fill swatch-400 rounded p-2">
 	<li class="nav-item">
-		<a href="{{path('workshop_show', {'workshop' : workshop.id, 'slug' : app.request.get('slug') })}}" class="nav-link {{ 'workshop_show' in app.request.attributes.get('_route') ? 'active' }}"  role="tab" >{{'Description' | trans }}</a>
+		<a href="{{path('workshop_show', {'workshop' : workshop.id, 'slug' : app.request.get('slug') })}}" class="nav-link {{ 'workshop_show' in app.request.attributes.get('_route') ? 'active' }}"  role="tab" >{{'description' | trans }}</a>
 	</li>
 	<li class="nav-item">
-		<a href="{{path('proposal_index', {'workshop' : workshop.id, 'slug' : app.request.get('slug'), })}}" class="nav-link {{ 'proposal' in app.request.attributes.get('_route') ? 'active' }}"  role="tab" >{{'Proposals' | trans }}</a>
+		<a href="{{path('proposal_index', {'workshop' : workshop.id, 'slug' : app.request.get('slug'), })}}" class="nav-link {{ 'proposal' in app.request.attributes.get('_route') ? 'active' }}"  role="tab" >{{'proposals' | trans }}</a>
 	</li>
 </ul>

@@ -8,7 +8,7 @@
 			<main class="col" id="content">
 				<div class="row mb-2" >
 					<div class="col-12 d-flex">
-						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'Workshop' | trans }} {{ workshop.name }}</h4>
+						<h4 class="mr-auto"><i class="fas fa-chevron-left"></i> {{ 'workshop' | trans }} {{ workshop.name }}</h4>
 						<nav aria-label="breadcrumb  text-secondary">
 							<ol class="breadcrumb text-small">
 								<li class="breadcrumb-item"><a href="{{ path('homepage') }}"><i class="fas fa-home"></i></a></li>
@@ -35,29 +35,29 @@
 								<div class="card">
 									<div class="card-body">
 										<div class="card-title">
-											<h5>{{ 'Details' | trans}} {{ 'Workshop' | trans | lower }}</h5>
+											<h5>{{ 'details' | trans}} {{ 'workshop' | trans | lower }}</h5>
 										</div>
 										<div class="card-text mb-3">{{ status(workshop.dateEnd) }}</div>
 										<div class="card-text mb-3">{{ workshop.description | raw }}</div>
 										<div class="card-text mb-3">
 											<div class="d-flex justify-content-between">
 												<div>
-													<b>{{ 'Date begin' | trans }}</b>
+													<b>{{ 'date_begin' | trans }}</b>
 													<br />
 													{{ workshop.dateBegin |date("d/m/Y") }}
 												</div>
 												<div>
-													<b>{{ 'Date end' | trans }}</b>
+													<b>{{ 'date_end' | trans }}</b>
 													<br />
 													{{ workshop.dateEnd |date("d/m/Y") }}
 												</div>
 												<div>
-													<b>{{ 'Proposals' | trans }}</b>
+													<b>{{ 'proposals' | trans }}</b>
 													<br />
 													{{ workshop.proposals | length }}
 												</div>
 												<div>
-													<b>{{ 'Forums' | trans }}</b>
+													<b>{{ 'forums' | trans }}</b>
 													<br />
 													{{ workshop.proposals | length }}
 												</div>
@@ -65,7 +65,7 @@
 										</div>
 										<!-- @Todo
 								<div class="card-text mb3">
-									<b>{{ 'Members' | trans }}</b>
+									<b>{{ 'members' | trans }}</b>
 									<br />
 									<div class="d-flex d-flex-nowrap">
 										<div class="avatar avatar-list avatar-sm bg-light text-secondary">CB</div>
@@ -86,7 +86,7 @@
 								<div class="card">
 									<div class="card-body">
 										<div class="card-title">
-											<h5>{{ 'Results' | trans}} {{ 'Workshop' | trans | lower }}</h5>
+											<h5>{{ 'results' | trans}} {{ 'workshop' | trans | lower }}</h5>
 										</div>										
 										<div class="card-text mb-3">
 											<div class="row">
@@ -166,16 +166,16 @@
 						{% endif%}
 					</div>
 					<div class="col-xl-4 col-md-12 mb-3">
-						<div class="card">
+						{# <div class="card">
 							<div class="card-body">
 								<div class="card-title">
-									<h5>{{ 'Timeline' | trans }}</h5>
+									<h5>{{ 'timeline' | trans }}</h5>
 								</div>
 								<div class="card-text">
 									<div class="timeline">
 										<div class="timeline-header" style="text-align:center;">
 											<div class="btn btn-primary disabled rounded">
-												{{ 'Today' | trans }}
+												{{ 'today' | trans }}
 											</div>
 										</div>
 										<div class="timeline-item d-flex flex-row">
@@ -198,7 +198,7 @@
 										</div>
 										<div class="timeline-footer" style="text-align:center;">
 											<div class="btn btn-secondary disabled rounded">
-												<b>{{ 'Start' | trans }}</b>
+												<b>{{ 'start' | trans }}</b>
 												<br />
 												{{ workshop.dateBegin | date('d/m/yy') }}
 											</div>
@@ -206,7 +206,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> #}
 					</div>
 				</div>
 			</main>

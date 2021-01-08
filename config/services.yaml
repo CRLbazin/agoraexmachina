@@ -7,13 +7,19 @@ parameters:
     params:
         website:
             title : AGORA Ex Machina
-            version : v0.9.1
-            name : Noone
+            version : v0.9.2
+            language : fr
+            name : CRLBazin
+            lang : fr_FR
+            ecriture : ltr
             administrator:
-                email: admin@admin.net
+                email: crlbazin@gmail.com
                 
     categories_images_directory: '/public/img/upload/categories'
     workshops_images_directory: '/public/img/upload/workshops'
+    # ici vos autres variables
+    app.locales: [en, fr]
+
 
 
 services:

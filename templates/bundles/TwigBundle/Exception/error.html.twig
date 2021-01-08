@@ -10,8 +10,8 @@
     <img class="mb-4 bg-white rounded" src="{{ asset('img/logo_aem.png') }}" alt width="72" height="72" />    
     
     <div class="mb-3">
-	{{ 'A technical error has occurred in the processing of your request. Please notify the site administrator' | trans }} : <a href="mailto:{{ params.website.administrator.email}}">{{ params.website.administrator.email}}</a>.
-	<br /><a href="{{ path('homepage') }}">{{ 'Home' | trans }}</a>
+	{{ 'error' | trans }} : <a href="mailto:{{ params.website.administrator.email}}">{{ params.website.administrator.email}}</a>.
+	<br /><a href="{{ path('homepage') }}">{{ 'home' | trans }}</a>
     </div>
 </form>
 {% endblock %}
